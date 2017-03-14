@@ -1,0 +1,32 @@
+{
+  "react": {
+      "var": "React"
+  },
+  "react-dom": {
+      "var": "ReactDOM",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/[version]/react-dom.min.js"
+  },
+  "redux-saga": {
+      "var": "ReduxSaga"
+  },
+  "babel-polyfill": {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/[version]/polyfill.min.js"
+  },
+  "react-redux": {
+      "var": "Redux"
+  },
+  "axios": {
+    "var": "axios"
+  },
+  "react-router-dom": {
+    "var": "ReactRouterDOM",
+    "url": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.min.js"
+  },
+  "tachyons": {
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/tachyons/[version]/tachyons.min.css"
+  },
+  "auth0-lock": {
+    "var": "Auth0Lock",
+    "url": "https://cdn.auth0.com/js/lock/[version]/lock.min.js"
+  }
+}

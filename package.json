@@ -1,0 +1,42 @@
+{
+  "name": "module-to-cdn",
+  "version": "0.0.0",
+  "description": "Get cdn config from npm module name",
+  "license": "MIT",
+  "repository": "mastilver/module-to-cdn",
+  "author": {
+    "name": "Thomas Sileghem",
+    "email": "th.sileghem@gmail.com",
+    "url": "mastilver.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "axios": "^0.15.3",
+    "xo": "^0.17.0"
+  },
+  "xo": {
+    "esnext": true,
+    "space": 4,
+    "ignores": [
+      "**/coverage/**"
+    ],
+    "rules": {
+      "ava/no-ignored-test-files": "off",
+      "eqeqeq": "off",
+      "no-eq-null": "off"
+    }
+  }
+}
