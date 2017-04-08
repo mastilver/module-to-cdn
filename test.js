@@ -21,6 +21,7 @@ async function testModule(t, moduleName) {
 
     t.is(cdnConfig.name, moduleName);
     t.truthy(cdnConfig.url);
+    t.true(cdnConfig.url.includes(version));
 
     const content = await axios.get(cdnConfig.url).then(x => x.data);
 
