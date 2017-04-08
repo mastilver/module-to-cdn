@@ -15,29 +15,30 @@ $ npm install --save module-to-cdn
 ```js
 const moduleToCdn = require('module-to-cdn');
 
-moduleToCdn('unicorns');
-//=> 'unicorns & rainbows'
+moduleToCdn('react', '15.3.0');
+/* => {
+    var: 'React',
+    url: 'https://unpkg.com/react@15.3.0/dist/react.min.js'
+}
+*/
 ```
 
 
 ## API
 
-### moduleToCdn(input, [options])
+### moduleToCdn(libraryName, libraryVersion)
 
-#### input
+#### libraryName
 
 Type: `string`
 
-Lorem ipsum.
+The name of the library
 
-#### options
+#### libraryVersion
 
-##### foo
+Type: `string`
 
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
+The version of the library
 
 
 ## License
