@@ -17,19 +17,15 @@ async function testModule(t, moduleName) {
 
     t.is(cdnConfig.name, moduleName);
     t.truthy(cdnConfig.url);
-    t.true(await checkUrl(cdnConfig.url));
+
+    const content = await axios.get(cdnConfig.url).then(x => x.data);
+
+    if (cdnConfig.var != null) {
+        t.true(content.includes(`.${cdnConfig.var}=`));
+    }
 }
 
 async function getLatestVersion(moduleName) {
     return await axios.get(`https://unpkg.com/${moduleName}/package.json`)
                       .then(x => x.data.version);
-}
-
-async function checkUrl(url) {
-    try {
-        await axios.get(url);
-        return true;
-    } catch (err) {
-        return false;
-    }
 }

@@ -1,29 +1,33 @@
 {
   "react": {
-      "var": "React"
+      "var": "React",
+      "url": "https://unpkg.com/react@[version]/dist/react.min.js"
   },
   "react-dom": {
       "var": "ReactDOM",
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/react/[version]/react-dom.min.js"
+      "url": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
   },
   "redux-saga": {
-      "var": "ReduxSaga"
+      "var": "ReduxSaga",
+      "url": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.js"
   },
   "babel-polyfill": {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/[version]/polyfill.min.js"
+      "url": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.min.js"
   },
   "react-redux": {
-      "var": "Redux"
+      "var": "ReactRedux",
+      "url": "https://unpkg.com/react-redux@[version]/dist/react-redux.min.js"
   },
   "axios": {
-    "var": "axios"
+    "var": "axios",
+    "url": "https://unpkg.com/axios@[version]/dist/axios.min.js"
   },
   "react-router-dom": {
     "var": "ReactRouterDOM",
     "url": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.min.js"
   },
   "tachyons": {
-    "url": "https://cdnjs.cloudflare.com/ajax/libs/tachyons/[version]/tachyons.min.css"
+    "url": "https://unpkg.com/tachyons@[version]/css/tachyons.min.css"
   },
   "auth0-lock": {
     "var": "Auth0Lock",
