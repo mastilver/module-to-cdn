@@ -26,19 +26,19 @@ moduleToCdn('react', '15.3.0');
 
 ## API
 
-### moduleToCdn(libraryName, libraryVersion)
+### moduleToCdn(moduleName, version)
 
-#### libraryName
-
-Type: `string`
-
-The name of the library
-
-#### libraryVersion
+#### moduleName
 
 Type: `string`
 
-The version of the library
+The name of the module
+
+#### version
+
+Type: `string`
+
+The version of the module
 
 
 ## License
