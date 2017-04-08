@@ -14,6 +14,10 @@
   "babel-polyfill": {
       "url": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.min.js"
   },
+  "redux": {
+    "var": "Redux",
+    "url": "https://unpkg.com/redux@[version]/dist/redux.min.js"
+  },
   "react-redux": {
       "var": "ReactRedux",
       "url": "https://unpkg.com/react-redux@[version]/dist/react-redux.min.js"
