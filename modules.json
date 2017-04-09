@@ -36,5 +36,9 @@
   "auth0-lock": {
     "var": "Auth0Lock",
     "url": "https://cdn.auth0.com/js/lock/[version]/lock.min.js"
+  },
+  "redux-act": {
+    "var": "ReduxAct",
+    "url": "https://unpkg.com/redux-act@[version]/dist/redux-act.js"
   }
 }

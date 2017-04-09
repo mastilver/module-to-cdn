@@ -26,7 +26,7 @@ async function testModule(t, moduleName) {
     const content = await axios.get(cdnConfig.url).then(x => x.data);
 
     if (cdnConfig.var != null) {
-        t.true(content.includes(`.${cdnConfig.var}=`));
+        t.true(content.replace(/ /g, '').includes(`.${cdnConfig.var}=`));
     }
 }
 
