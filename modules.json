@@ -39,6 +39,6 @@
   },
   "redux-act": {
     "var": "ReduxAct",
-    "url": "https://unpkg.com/redux-act@[version]/dist/redux-act.js"
+    "url": "https://unpkg.com/redux-act@[version]/dist/redux-act.min.js"
   }
 }
