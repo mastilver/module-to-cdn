@@ -7,7 +7,7 @@ import fn from '.';
 const moduleNames = Object.keys(modules);
 
 test('unknown library', t => {
-    t.throws(() => fn('qwerty', '1.0.0'), '\'qwerty\' is not available through cdn, add it to https://github.com/mastilver/module-to-cdn/blob/master/modules.json if you think it should');
+    t.is(fn('qwerty', '1.0.0'), null);
 });
 
 for (const moduleName of moduleNames) {

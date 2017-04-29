@@ -28,6 +28,8 @@ moduleToCdn('react', '15.3.0');
 
 ### moduleToCdn(moduleName, version)
 
+return the result `Object` or null (if module couldn't be find)
+
 #### moduleName
 
 Type: `string`
@@ -39,6 +41,12 @@ The name of the module
 Type: `string`
 
 The version of the module
+
+### Result
+
+* `name`: name of the module
+* `var`: name of the global variable exposing the module
+* `url`: url where the module is available
 
 
 ## License
