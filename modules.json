@@ -40,5 +40,17 @@
   "redux-act": {
     "var": "ReduxAct",
     "url": "https://unpkg.com/redux-act@[version]/dist/redux-act.min.js"
+  },
+  "flow-runtime": {
+    "var": "flow-runtime",
+    "url": "https://unpkg.com/flow-runtime@[version]/dist/flow-runtime.min.js"
+  },
+  "jwt-decode": {
+    "var": "jwt_decode",
+    "url": "https://unpkg.com/jwt-decode@[version]/build/jwt-decode.js"
+  },
+  "redux-thunk": {
+    "var": "ReduxThunk",
+    "url": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.js"
   }
 }

@@ -23,10 +23,15 @@ async function testModule(t, moduleName) {
     t.truthy(cdnConfig.url);
     t.true(cdnConfig.url.includes(version));
 
-    const content = await axios.get(cdnConfig.url).then(x => x.data);
+    let content = await axios.get(cdnConfig.url).then(x => x.data);
 
     if (cdnConfig.var != null) {
-        t.true(content.replace(/ /g, '').includes(`.${cdnConfig.var}=`));
+        content = content.replace(/ /g, '');
+
+        t.true(
+            content.includes(`.${cdnConfig.var}=`) ||
+            content.includes(`["${cdnConfig.var}"]=`)
+        );
     }
 }
 
