@@ -1,6 +1,6 @@
 {
   "name": "module-to-cdn",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Get cdn config from npm module name",
   "license": "MIT",
   "repository": "mastilver/module-to-cdn",
