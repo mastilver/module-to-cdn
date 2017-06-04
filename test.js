@@ -30,7 +30,8 @@ async function testModule(t, moduleName) {
 
         t.true(
             content.includes(`.${cdnConfig.var}=`) ||
-            content.includes(`["${cdnConfig.var}"]=`)
+            content.includes(`["${cdnConfig.var}"]=`) ||
+            content.includes(`['${cdnConfig.var}']=`)
         );
     }
 }

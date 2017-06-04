@@ -52,5 +52,13 @@
   "redux-thunk": {
     "var": "ReduxThunk",
     "url": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.js"
+  },
+  "object-assign": {
+    "var": "object-assign",
+    "url": "https://unpkg.com/@umds/object-assign@[version]-beta.23/object-assign.min.js"
+  },
+  "redux-act-async": {
+    "var": "redux-act-async",
+    "url": "https://unpkg.com/@umds/redux-act-async@[version]-beta.23/redux-act-async.js"
   }
 }
