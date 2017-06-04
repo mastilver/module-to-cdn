@@ -26,7 +26,7 @@ moduleToCdn('react', '15.3.0');
 
 ## API
 
-### moduleToCdn(moduleName, version)
+### moduleToCdn(moduleName, version, options)
 
 return the result `Object` or null (if module couldn't be find)
 
@@ -41,6 +41,14 @@ The name of the module
 Type: `string`
 
 The version of the module
+
+#### options
+
+##### options.env
+
+Type: `string`<br>
+Values: `development`, `production`<br>
+Default: `development`
 
 ### Result
 

@@ -2,7 +2,10 @@
 
 const modules = require('./modules');
 
-module.exports = function (moduleName, version) {
+module.exports = function (moduleName, version, options) {
+    options = options || {};
+    const env = options.env || 'development';
+
     if (typeof moduleName !== 'string') {
         throw new TypeError('Expected \'moduleName\' to be a string');
     }
@@ -16,11 +19,12 @@ module.exports = function (moduleName, version) {
         return null;
     }
 
-    const module = Object.assign({
-        name: moduleName
-    }, modules[moduleName]);
+    let url = env === 'development' ? modules[moduleName].development : modules[moduleName].production;
+    url = url.replace('[version]', version);
 
-    module.url = module.url.replace('[version]', version);
-
-    return module;
+    return {
+        name: moduleName,
+        var: modules[moduleName].var,
+        url
+    };
 };

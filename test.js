@@ -12,16 +12,24 @@ test('unknown library', t => {
 
 for (const moduleName of moduleNames) {
     test(moduleName, testModule, moduleName);
+    test(`prod: ${moduleName}`, testModule, moduleName, 'production');
+    test(`dev: ${moduleName}`, testModule, moduleName, 'development');
 }
 
-async function testModule(t, moduleName) {
+async function testModule(t, moduleName, env) {
     const version = await getLatestVersion(moduleName);
 
-    const cdnConfig = fn(moduleName, version);
+    const cdnConfig = fn(moduleName, version, {env});
 
     t.is(cdnConfig.name, moduleName);
     t.truthy(cdnConfig.url);
     t.true(cdnConfig.url.includes(version));
+
+    if (env === 'production') {
+        t.true(cdnConfig.url.includes('min'));
+    } else {
+        t.false(cdnConfig.url.includes('min'));
+    }
 
     let content = await axios.get(cdnConfig.url).then(x => x.data);
 

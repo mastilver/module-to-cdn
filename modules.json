@@ -1,64 +1,75 @@
 {
   "react": {
-      "var": "React",
-      "url": "https://unpkg.com/react@[version]/dist/react.min.js"
+    "var": "React",
+    "development": "https://unpkg.com/react@[version]/dist/react.js",
+    "production": "https://unpkg.com/react@[version]/dist/react.min.js"
   },
   "react-dom": {
-      "var": "ReactDOM",
-      "url": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
+    "var": "ReactDOM",
+    "development": "https://unpkg.com/react-dom@[version]/dist/react-dom.js",
+    "production": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
   },
   "redux-saga": {
-      "var": "ReduxSaga",
-      "url": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.js"
+    "var": "ReduxSaga",
+    "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.js",
+    "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.js"
   },
   "babel-polyfill": {
-      "url": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.min.js"
+    "development": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.js",
+    "production": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.min.js"
   },
   "redux": {
     "var": "Redux",
-    "url": "https://unpkg.com/redux@[version]/dist/redux.min.js"
+    "development": "https://unpkg.com/redux@[version]/dist/redux.js",
+    "production": "https://unpkg.com/redux@[version]/dist/redux.min.js"
   },
   "react-redux": {
-      "var": "ReactRedux",
-      "url": "https://unpkg.com/react-redux@[version]/dist/react-redux.min.js"
+    "var": "ReactRedux",
+    "development": "https://unpkg.com/react-redux@[version]/dist/react-redux.js",
+    "production": "https://unpkg.com/react-redux@[version]/dist/react-redux.min.js"
   },
   "axios": {
     "var": "axios",
-    "url": "https://unpkg.com/axios@[version]/dist/axios.min.js"
+    "development": "https://unpkg.com/axios@[version]/dist/axios.js",
+    "production": "https://unpkg.com/axios@[version]/dist/axios.min.js"
   },
   "react-router-dom": {
     "var": "ReactRouterDOM",
-    "url": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.min.js"
+    "development": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.js",
+    "production": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.min.js"
   },
   "tachyons": {
-    "url": "https://unpkg.com/tachyons@[version]/css/tachyons.min.css"
+    "development": "https://unpkg.com/tachyons@[version]/css/tachyons.css",
+    "production": "https://unpkg.com/tachyons@[version]/css/tachyons.min.css"
   },
   "auth0-lock": {
     "var": "Auth0Lock",
-    "url": "https://cdn.auth0.com/js/lock/[version]/lock.min.js"
+    "development": "https://cdn.auth0.com/js/lock/[version]/lock.js",
+    "production": "https://cdn.auth0.com/js/lock/[version]/lock.min.js"
   },
   "redux-act": {
     "var": "ReduxAct",
-    "url": "https://unpkg.com/redux-act@[version]/dist/redux-act.min.js"
-  },
-  "flow-runtime": {
-    "var": "flow-runtime",
-    "url": "https://unpkg.com/flow-runtime@[version]/dist/flow-runtime.min.js"
+    "development": "https://unpkg.com/redux-act@[version]/dist/redux-act.js",
+    "production": "https://unpkg.com/redux-act@[version]/dist/redux-act.min.js"
   },
   "jwt-decode": {
     "var": "jwt_decode",
-    "url": "https://unpkg.com/jwt-decode@[version]/build/jwt-decode.js"
+    "development": "https://unpkg.com/jwt-decode@[version]/build/jwt-decode.js",
+    "production": "https://unpkg.com/jwt-decode@[version]/build/jwt-decode.min.js"
   },
   "redux-thunk": {
     "var": "ReduxThunk",
-    "url": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.js"
+    "development": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.js",
+    "production": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.min.js"
   },
   "object-assign": {
     "var": "object-assign",
-    "url": "https://unpkg.com/@umds/object-assign@[version]-beta.23/object-assign.min.js"
+    "development": "https://unpkg.com/@umds/object-assign@[version]-beta.23/object-assign.js",
+    "production": "https://unpkg.com/@umds/object-assign@[version]-beta.23/object-assign.min.js"
   },
   "redux-act-async": {
     "var": "redux-act-async",
-    "url": "https://unpkg.com/@umds/redux-act-async@[version]-beta.23/redux-act-async.js"
+    "development": "https://unpkg.com/@umds/redux-act-async@[version]-beta.23/redux-act-async.js",
+    "production": "https://unpkg.com/@umds/redux-act-async@[version]-beta.23/redux-act-async.min.js"
   }
 }
