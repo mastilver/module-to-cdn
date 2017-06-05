@@ -41,10 +41,22 @@ async function testModule(t, moduleName, env) {
             content.includes(`["${cdnConfig.var}"]=`) ||
             content.includes(`['${cdnConfig.var}']=`)
         );
+
+        t.true(isValidVarName(cdnConfig.var));
     }
 }
 
 async function getLatestVersion(moduleName) {
     return await axios.get(`https://unpkg.com/${moduleName}/package.json`)
                       .then(x => x.data.version);
+}
+
+// https://stackoverflow.com/a/31625466/3052444
+function isValidVarName(name) {
+    try {
+        // eslint-disable-next-line no-eval
+        return name.indexOf('}') === -1 && eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true');
+    } catch (err) {
+        return false;
+    }
 }

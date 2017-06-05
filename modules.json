@@ -63,13 +63,13 @@
     "production": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.min.js"
   },
   "object-assign": {
-    "var": "object-assign",
-    "development": "https://unpkg.com/@umds/object-assign@[version]-beta.23/object-assign.js",
-    "production": "https://unpkg.com/@umds/object-assign@[version]-beta.23/object-assign.min.js"
+    "var": "ObjectAssign",
+    "development": "https://unpkg.com/@umds/object-assign@[version]-beta.24/object-assign.js",
+    "production": "https://unpkg.com/@umds/object-assign@[version]-beta.24/object-assign.min.js"
   },
   "redux-act-async": {
-    "var": "redux-act-async",
-    "development": "https://unpkg.com/@umds/redux-act-async@[version]-beta.23/redux-act-async.js",
-    "production": "https://unpkg.com/@umds/redux-act-async@[version]-beta.23/redux-act-async.min.js"
+    "var": "ReduxActAsync",
+    "development": "https://unpkg.com/@umds/redux-act-async@[version]-beta.24/redux-act-async.js",
+    "production": "https://unpkg.com/@umds/redux-act-async@[version]-beta.24/redux-act-async.min.js"
   }
 }
