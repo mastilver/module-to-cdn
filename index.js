@@ -1,5 +1,7 @@
 'use strict';
 
+const semver = require('semver');
+
 const modules = require('./modules');
 
 module.exports = function (moduleName, version, options) {
@@ -19,7 +21,15 @@ module.exports = function (moduleName, version, options) {
         return null;
     }
 
-    let url = env === 'development' ? modules[moduleName].development : modules[moduleName].production;
+    const range = Object.keys(modules[moduleName].versions)
+                         .find(range => semver.satisfies(version, range));
+    const config = modules[moduleName].versions[range];
+
+    if (config == null) {
+        return null;
+    }
+
+    let url = env === 'development' ? config.development : config.production;
     url = url.replace('[version]', version);
 
     return {

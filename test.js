@@ -1,37 +1,49 @@
 import test from 'ava';
 import axios from 'axios';
+import execa from 'execa';
+import semver from 'semver';
 
 import modules from './modules';
 import fn from '.';
 
 const moduleNames = Object.keys(modules);
 
-test('unknown library', t => {
+test('unknown module', t => {
     t.is(fn('qwerty', '1.0.0'), null);
 });
 
+test('default to development', t => {
+    t.deepEqual(fn('react', '15.0.0', {env: 'development'}), fn('react', '15.0.0'));
+    t.notDeepEqual(fn('react', '15.0.0', {env: 'production'}), fn('react', '15.0.0'));
+});
+
+test('out of range module', t => {
+    t.is(fn('react', '0.10.0'), null);
+});
+
 for (const moduleName of moduleNames) {
-    test(moduleName, testModule, moduleName);
-    test(`prod: ${moduleName}`, testModule, moduleName, 'production');
-    test(`dev: ${moduleName}`, testModule, moduleName, 'development');
+    const versionRanges = Object.keys(modules[moduleName].versions);
+
+    getAllVersions(moduleName)
+    .filter(version => {
+        return versionRanges.some(range => semver.satisfies(version, range));
+    })
+    .forEach(version => {
+        test.serial(`prod: ${moduleName}@${version}`, testModule, moduleName, version, 'production');
+        test.serial(`dev: ${moduleName}@${version}`, testModule, moduleName, version, 'development');
+    });
 }
 
-async function testModule(t, moduleName, env) {
-    const version = await getLatestVersion(moduleName);
-
+async function testModule(t, moduleName, version, env) {
     const cdnConfig = fn(moduleName, version, {env});
+
+    t.notDeepEqual(cdnConfig, null);
 
     t.is(cdnConfig.name, moduleName);
     t.truthy(cdnConfig.url);
     t.true(cdnConfig.url.includes(version));
 
-    if (env === 'production') {
-        t.true(cdnConfig.url.includes('min'));
-    } else {
-        t.false(cdnConfig.url.includes('min'));
-    }
-
-    let content = await axios.get(cdnConfig.url).then(x => x.data);
+    let content = await t.notThrows(axios.get(cdnConfig.url).then(x => x.data), cdnConfig.url);
 
     if (cdnConfig.var != null) {
         content = content.replace(/ /g, '');
@@ -46,9 +58,9 @@ async function testModule(t, moduleName, env) {
     }
 }
 
-async function getLatestVersion(moduleName) {
-    return await axios.get(`https://unpkg.com/${moduleName}/package.json`)
-                      .then(x => x.data.version);
+function getAllVersions(moduleName) {
+    const {versions} = JSON.parse(execa.sync('npm', ['info', '--json', `${moduleName}`]).stdout);
+    return versions;
 }
 
 // https://stackoverflow.com/a/31625466/3052444
