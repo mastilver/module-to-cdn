@@ -143,5 +143,67 @@
         "production": "https://unpkg.com/@umds/redux-act-async@[version]-beta.24/redux-act-async.min.js"
       }
     }
+  },
+  "mobx": {
+    "var": "mobx",
+    "versions": {
+      ">= 2.1.3": {
+        "development": "https://unpkg.com/mobx@[version]/lib/mobx.umd.js",
+        "production": "https://unpkg.com/mobx@[version]/lib/mobx.umd.min.js"
+      }
+    }
+  },
+  "vue": {
+    "var": "Vue",
+    "versions": {
+      ">= 0.8.7 <= 2.0.3": {
+        "development": "https://unpkg.com/vue@[version]/dist/vue.js",
+        "production": "https://unpkg.com/vue@[version]/dist/vue.min.js"
+      },
+      ">= 2.0.4": {
+        "development": "https://unpkg.com/vue@[version]/dist/vue.runtime.js",
+        "production": "https://unpkg.com/vue@[version]/dist/vue.runtime.min.js"
+      }
+    }
+  },
+  "angular": {
+    "var": "angular",
+    "versions": {
+      ">= 1.2.17 <= 1.2.23": {
+        "development": "https://unpkg.com/angular@[version]/lib/angular.js",
+        "production": "https://unpkg.com/angular@[version]/lib/angular.min.js"
+      },
+      ">= 1.2.27": {
+        "development": "https://unpkg.com/angular@[version]/angular.js",
+        "production": "https://unpkg.com/angular@[version]/angular.min.js"
+      }
+    }
+  },
+  "@angular/core": {
+    "var": "ng",
+    "versions": {
+      "*": {
+        "development": "https://unpkg.com/@angular/core@[version]/bundles/core.umd.js",
+        "production": "https://unpkg.com/@angular/core@[version]/bundles/core.umd.min.js"
+      }
+    }
+  },
+  "rx": {
+    "var": "Rx",
+    "versions": {
+      ">= 2.2.21": {
+        "development": "https://unpkg.com/rx@[version]/dist/rx.all.js",
+        "production": "https://unpkg.com/rx@[version]/dist/rx.all.min.js"
+      }
+    }
+  },
+  "zone.js": {
+    "var": "Zone",
+    "versions": {
+      ">= 0.5.0 <= 0.6.26 || >= 0.7.2": {
+        "development": "https://unpkg.com/zone.js@[version]/dist/zone.js",
+        "production": "https://unpkg.com/zone.js@[version]/dist/zone.min.js"
+      }
+    }
   }
 }
