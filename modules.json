@@ -197,6 +197,15 @@
       }
     }
   },
+  "rxjs": {
+    "var": "Rx",
+    "versions": {
+      "*": {
+        "development": "https://unpkg.com/rxjs@[version]/bundles/Rx.js",
+        "production": "https://unpkg.com/rxjs@[version]/bundles/Rx.min.js"
+      }
+    }
+  },
   "zone.js": {
     "var": "Zone",
     "versions": {
