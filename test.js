@@ -24,6 +24,9 @@ test('out of range module', t => {
 for (const moduleName of moduleNames) {
     const versionRanges = Object.keys(modules[moduleName].versions);
 
+    test.serial(`prod: ${moduleName}@next`, testNextModule, moduleName, 'production');
+    test.serial(`dev: ${moduleName}@next`, testNextModule, moduleName, 'development');
+
     getAllVersions(moduleName)
     .filter(version => {
         return versionRanges.some(range => semver.satisfies(version, range));
@@ -37,6 +40,27 @@ for (const moduleName of moduleNames) {
 async function testModule(t, moduleName, version, env) {
     const cdnConfig = fn(moduleName, version, {env});
 
+    await testCdnConfig(t, cdnConfig, moduleName, version);
+}
+
+async function testNextModule(t, moduleName, env) {
+    const tags = getModuleInfo(moduleName)['dist-tags'];
+
+    if (!tags.next) {
+        return;
+    }
+
+    const nextVersion = tags.next;
+    const futureVersion = removePrereleaseItentifiers(nextVersion);
+
+    const cdnConfig = fn(moduleName, futureVersion, {env});
+
+    cdnConfig.url = cdnConfig.url.replace(futureVersion, nextVersion);
+
+    await testCdnConfig(t, cdnConfig, moduleName, nextVersion);
+}
+
+async function testCdnConfig(t, cdnConfig, moduleName, version) {
     t.notDeepEqual(cdnConfig, null);
 
     t.is(cdnConfig.name, moduleName);
@@ -58,9 +82,12 @@ async function testModule(t, moduleName, version, env) {
     }
 }
 
+function getModuleInfo(moduleName) {
+    return JSON.parse(execa.sync('npm', ['info', '--json', `${moduleName}`]).stdout);
+}
+
 function getAllVersions(moduleName) {
-    const {versions} = JSON.parse(execa.sync('npm', ['info', '--json', `${moduleName}`]).stdout);
-    return versions;
+    return getModuleInfo(moduleName).versions;
 }
 
 // https://stackoverflow.com/a/31625466/3052444
@@ -71,4 +98,8 @@ function isValidVarName(name) {
     } catch (err) {
         return false;
     }
+}
+
+function removePrereleaseItentifiers(version) {
+    return `${semver.major(version)}.${semver.minor(version)}.${semver.patch(version)}`;
 }
