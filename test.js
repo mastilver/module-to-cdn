@@ -8,6 +8,15 @@ import fn from '.';
 
 const moduleNames = Object.keys(modules);
 
+test('basic', t => {
+    t.deepEqual(fn('react', '15.0.0', {env: 'development'}), {
+        name: 'react',
+        var: 'React',
+        url: 'https://unpkg.com/react@15.0.0/dist/react.js',
+        version: '15.0.0'
+    });
+});
+
 test('unknown module', t => {
     t.is(fn('qwerty', '1.0.0'), null);
 });

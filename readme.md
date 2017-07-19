@@ -17,8 +17,10 @@ const moduleToCdn = require('module-to-cdn');
 
 moduleToCdn('react', '15.3.0');
 /* => {
+    name: 'react',
     var: 'React',
-    url: 'https://unpkg.com/react@15.3.0/dist/react.min.js'
+    url: 'https://unpkg.com/react@15.3.0/dist/react.min.js',
+    version: '15.3.0'
 }
 */
 ```
@@ -55,6 +57,7 @@ Default: `development`
 * `name`: name of the module
 * `var`: name of the global variable exposing the module
 * `url`: url where the module is available
+* `version`: the version asked for
 
 
 ## License

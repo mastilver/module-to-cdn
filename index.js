@@ -35,6 +35,7 @@ module.exports = function (moduleName, version, options) {
     return {
         name: moduleName,
         var: modules[moduleName].var,
-        url
+        url,
+        version
     };
 };
