@@ -214,5 +214,23 @@
         "production": "https://unpkg.com/zone.js@[version]/dist/zone.min.js"
       }
     }
+  },
+  "preact": {
+    "var": "preact",
+    "versions": {
+      ">= 2.4.0": {
+        "development": "https://unpkg.com/preact@[version]/dist/preact.js",
+        "production": "https://unpkg.com/preact@[version]/dist/preact.min.js"
+      }
+    }
+  },
+  "preact-compat": {
+    "var": "preactCompat",
+    "versions": {
+      ">= 1.0.0": {
+        "development": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.js",
+        "production": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.min.js"
+      }
+    }
   }
 }
