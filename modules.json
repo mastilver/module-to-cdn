@@ -218,16 +218,15 @@
   "preact": {
     "var": "preact",
     "versions": {
-      ">= 1.2.0": {
+      ">= 2.4.0": {
         "development": "https://unpkg.com/preact@[version]/dist/preact.js",
         "production": "https://unpkg.com/preact@[version]/dist/preact.min.js"
       }
     }
   },
   "preact-compat": {
-    "var": "PreactCompat",
     "versions": {
-      ">= 0.1.0": {
+      ">= 1.0.0": {
         "development": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.js",
         "production": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.min.js"
       }
