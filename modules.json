@@ -225,6 +225,7 @@
     }
   },
   "preact-compat": {
+    "var": "preactCompat",
     "versions": {
       ">= 1.0.0": {
         "development": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.js",
