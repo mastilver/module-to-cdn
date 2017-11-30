@@ -234,9 +234,9 @@
     }
   },
   "semantic-ui": {
-    "var": "$",
+    "var": null,
     "versions": {
-      "*": {
+      ">= 1.1.2": {
         "development": "https://unpkg.com/semantic-ui@[version]/dist/semantic.js",
         "production": "https://unpkg.com/semantic-ui@[version]/dist/semantic.min.js"
       }
@@ -245,7 +245,7 @@
   "jszip": {
     "var": "JSZip",
     "versions": {
-      "*": {
+      ">= 2.6.0": {
         "development": "https://unpkg.com/jszip@[version]/dist/jszip.js",
         "production": "https://unpkg.com/jszip@[version]/dist/jszip.min.js"
       }
