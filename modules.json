@@ -180,11 +180,137 @@
     }
   },
   "@angular/core": {
-    "var": "ng",
+    "var": "ng.core",
     "versions": {
-      "*": {
+      ">=2.0.0": {
         "development": "https://unpkg.com/@angular/core@[version]/bundles/core.umd.js",
         "production": "https://unpkg.com/@angular/core@[version]/bundles/core.umd.min.js"
+      }
+    }
+  },
+  "@angular/common": {
+    "var": "ng.common",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/common@[version]/bundles/common.umd.js",
+        "production": "https://unpkg.com/@angular/common@[version]/bundles/common.umd.min.js"
+      }
+    }
+  },
+  "@angular/common/http": {
+    "var": "ng.common.http",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/common@[version]/bundles/common-http.umd.js",
+        "production": "https://unpkg.com/@angular/common@[version]/bundles/common-http.umd.min.js"
+      }
+    }
+  },
+  "@angular/compiler": {
+    "var": "ng.compiler",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/compiler@[version]/bundles/compiler.umd.js",
+        "production": "https://unpkg.com/@angular/compiler@[version]/bundles/compiler.umd.min.js"
+      }
+    }
+  },
+  "@angular/animations": {
+    "var": "ng.animations",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/animations@[version]/bundles/animations.umd.js",
+        "production": "https://unpkg.com/@angular/animations@[version]/bundles/animations.umd.min.js"
+      }
+    }
+  },
+  "@angular/animations/browser": {
+    "var": "ng.animations.browser",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/animations@[version]/bundles/animations-browser.umd.js",
+        "production": "https://unpkg.com/@angular/animations@[version]/bundles/animations-browser.umd.min.js"
+      }
+    }
+  },
+  "@angular/http": {
+    "var": "ng.http",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/http@[version]/bundles/http.umd.js",
+        "production": "https://unpkg.com/@angular/http@[version]/bundles/http.umd.min.js"
+      }
+    }
+  },
+  "@angular/forms": {
+    "var": "ng.forms",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/forms@[version]/bundles/forms.umd.js",
+        "production": "https://unpkg.com/@angular/forms@[version]/bundles/forms.umd.min.js"
+      }
+    }
+  },
+  "@angular/platform-browser": {
+    "var": "ng.platformBrowser",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/platform-browser@[version]/bundles/platform-browser.umd.js",
+        "production": "https://unpkg.com/@angular/platform-browser@[version]/bundles/platform-browser.umd.min.js"
+      }
+    }
+  },
+  "@angular/platform-browser-dynamic": {
+    "var": "ng.platformBrowserDynamic",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/platform-browser-dynamic@[version]/bundles/platform-browser-dynamic.umd.js",
+        "production": "https://unpkg.com/@angular/platform-browser-dynamic@[version]/bundles/platform-browser-dynamic.umd.min.js"
+      }
+    }
+  },
+  "@angular/router": {
+    "var": "ng.router",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/router@[version]/bundles/router.umd.js",
+        "production": "https://unpkg.com/@angular/router@[version]/bundles/router.umd.min.js"
+      }
+    }
+  },
+  "@angular/upgrade": {
+    "var": "ng.upgrade",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/upgrade@[version]/bundles/upgrade.umd.js",
+        "production": "https://unpkg.com/@angular/upgrade@[version]/bundles/upgrade.umd.min.js"
+      }
+    }
+  },
+  "@angular/upgrade/static": {
+    "var": "ng.upgrade.static",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/upgrade@[version]/bundles/upgrade-static.umd.js",
+        "production": "https://unpkg.com/@angular/upgrade@[version]/bundles/upgrade-static.umd.min.js"
+      }
+    }
+  },
+  "core-js": {
+    "var": "window",
+    "versions": {
+      "*": {
+        "development": "https://unpkg.com/core-js@[version]/client/core.js",
+        "production": "https://unpkg.com/core-js@[version]/client/core.min.js"
+      }
+    }
+  },
+  "reflect-metadata": {
+    "var": "Reflect",
+    "versions": {
+      ">= 0.0.2": {
+        "development": "https://unpkg.com/reflect-metadata@[version]/Reflect.js",
+        "production": "https://unpkg.com/reflect-metadata@[version]/Reflect.js"
       }
     }
   },
