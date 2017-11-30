@@ -200,7 +200,7 @@
   "@angular/common/http": {
     "var": "ng.common.http",
     "versions": {
-      ">=2.0.0": {
+      ">=2.1.0 < 3.0.0 || >= 4.0.0": {
         "development": "https://unpkg.com/@angular/common@[version]/bundles/common-http.umd.js",
         "production": "https://unpkg.com/@angular/common@[version]/bundles/common-http.umd.min.js"
       }
@@ -227,7 +227,7 @@
   "@angular/animations/browser": {
     "var": "ng.animations.browser",
     "versions": {
-      ">=2.0.0": {
+      ">=2.1.0 < 3.0.0 || >= 4.0.0": {
         "development": "https://unpkg.com/@angular/animations@[version]/bundles/animations-browser.umd.js",
         "production": "https://unpkg.com/@angular/animations@[version]/bundles/animations-browser.umd.min.js"
       }
@@ -290,16 +290,16 @@
   "@angular/upgrade/static": {
     "var": "ng.upgrade.static",
     "versions": {
-      ">=2.0.0": {
+      ">=2.2.0 < 3.0.0 || >= 4.0.0": {
         "development": "https://unpkg.com/@angular/upgrade@[version]/bundles/upgrade-static.umd.js",
         "production": "https://unpkg.com/@angular/upgrade@[version]/bundles/upgrade-static.umd.min.js"
       }
     }
   },
   "core-js": {
-    "var": "window",
+    "var": "core",
     "versions": {
-      "*": {
+      ">= 0.0.9": {
         "development": "https://unpkg.com/core-js@[version]/client/core.js",
         "production": "https://unpkg.com/core-js@[version]/client/core.min.js"
       }
