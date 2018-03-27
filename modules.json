@@ -380,9 +380,13 @@
   "file-saver": {
     "var": "saveAs",
     "versions": {
-      ">= 1.2.0": {
+      ">= 1.2.0 <= 1.3.3": {
         "development": "https://unpkg.com/file-saver@[version]/FileSaver.js",
         "production": "https://unpkg.com/file-saver@[version]/FileSaver.min.js"
+      },
+      ">= 1.3.4": {
+        "development": "https://unpkg.com/file-saver@[version]/dist/FileSaver.js",
+        "production": "https://unpkg.com/file-saver@[version]/dist/FileSaver.min.js"
       }
     }
   },
