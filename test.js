@@ -102,6 +102,11 @@ function getAllVersions(moduleName) {
 // https://stackoverflow.com/a/31625466/3052444
 function isValidVarName(name) {
     try {
+        if (name.indexOf('.') > -1) {
+            // e.g. ng.core would cause errors otherwise:
+            name = name.split('.').join('_');
+        }
+
         // eslint-disable-next-line no-eval
         return name.indexOf('}') === -1 && eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true');
     } catch (err) {
