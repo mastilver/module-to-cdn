@@ -386,6 +386,33 @@
       }
     }
   },
+  "react-apollo": {
+    "var": "react-apollo",
+    "versions": {
+      ">= 2.1.0" : {
+        "production": "https://unpkg.com/react-apollo@2.1.1/react-apollo.browser.umd.js",
+        "development" : "https://unpkg.com/react-apollo@2.1.1/react-apollo.browser.umd.js"
+      }
+    }
+  },
+  "lodash": {
+    "var": "_",
+    "versions": {
+      ">= 4.17.0" : {
+        "production": "https://unpkg.com/lodash@4.17.5/lodash.min.js",
+        "development": "https://unpkg.com/lodash@4.17.5/lodash.js"
+      }
+    }
+  },
+  "styled-components": {
+    "var": "styled",
+    "versions": {
+      ">= 3.2.0" : {
+        "production": "https://unpkg.com/styled-components@3.2.5/dist/styled-components.min.js",
+        "development": "https://unpkg.com/styled-components@3.2.5/dist/styled-components.js"
+      }
+    }
+  },
   "jquery": {
     "var": "$",
     "versions": {
