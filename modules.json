@@ -413,6 +413,96 @@
       }
     }
   },
+  "moment": {
+    "var": "moment",
+    "versions": {
+      ">= 2.22.0" : {
+        "production": "https://unpkg.com/moment@2.22.0/min/moment.min.js",
+        "development": "https://unpkg.com/moment@2.22.0/moment.js"
+      }
+    }
+  },
+  "redux-thunk": {
+    "var": "ReduxThunk",
+    "versions": {
+      ">= 2.2.0" : {
+        "production": "https://unpkg.com/redux-thunk@2.2.0/dist/redux-thunk.min.js",
+        "development": "https://unpkg.com/redux-thunk@2.2.0/dist/redux-thunk.js"
+      }
+    }
+  },
+  "immutable": {
+    "var": "Immutable",
+    "versions": {
+      ">= 3.8.0" : {
+        "production": "https://unpkg.com/immutable@3.8.2/dist/immutable.min.js",
+        "development": "https://unpkg.com/immutable@3.8.2/dist/immutable.js"
+      }
+    }
+  },
+  "selectize": {
+    "var": "Selectize",
+    "versions": {
+      "0.12.4" : {
+        "production": "https://unpkg.com/selectize@0.12.4/dist/js/selectize.min.js",
+        "development": "https://unpkg.com/selectize@0.12.4/dist/js/selectize.js"
+      }
+    }
+  },
+  "picker": {
+    "var": "Selectize",
+    "versions": {
+      "0.1.4" : {
+        "production": "https://unpkg.com/picker@0.1.4/index.js",
+        "development": "https://unpkg.com/picker@0.1.4/index.js"
+      }
+    }
+  },
+  "packery": {
+    "var": "Packery",
+    "versions": {
+      ">= 2.1.0" : {
+        "production": "https://unpkg.com/packery@2.1.1/dist/packery.pkgd.min.js",
+        "development": "https://unpkg.com/packery@2.1.1/dist/packery.pkgd.js"
+      }
+    }
+  },
+  "backbone": {
+    "var": "Backbone",
+    "versions": {
+      ">= 1.3.0" : {
+        "production": "https://unpkg.com/backbone@1.3.3/backbone-min.js",
+        "development": "https://unpkg.com/backbone@1.3.3/backbone.js"
+      }
+    }
+  },
+  "handlebars": {
+    "var": "Handlebars",
+    "versions": {
+      ">= 4.0.0" : {
+        "production": "https://unpkg.com/handlebars@4.0.11/dist/handlebars.min.js",
+        "development": "https://unpkg.com/handlebars@4.0.11/dist/handlebars.js"
+      }
+    }
+  },
+  "crypto-js": {
+    "var": "CryptoJS",
+    "versions": {
+      ">= 3.1.0" : {
+        "production": "https://unpkg.com/crypto-js@3.1.9-1/index.js",
+        "development": "https://unpkg.com/crypto-js@3.1.9-1/index.js"
+      }
+    }
+  },
+  "react-overlays": {
+    "var": "RootCloseWrapper",
+    "versions": {
+      "0.8.3" : {
+        "production": "https://unpkg.com/react-overlays@0.8.3/lib/index.js",
+        "development": "https://unpkg.com/react-overlays@0.8.3/lib/index.js"
+      }
+    }
+  },
   "jquery": {
     "var": "$",
     "versions": {
