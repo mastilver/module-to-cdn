@@ -397,7 +397,7 @@
   },
   "hyperapp": {
     "var": "hyperapp",
-    "versions: {
+    "versions": {
       ">= 0.0.12": {
         "development": "https://unpkg.com/hyperapp@[version]/dist/hyperapp.js",
         "production": "https://unpkg.com/hyperapp@[version]/dist/hyperapp.js"
