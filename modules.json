@@ -326,10 +326,14 @@
   "rxjs": {
     "var": "Rx",
     "versions": {
-      "*": {
+      ">= 5.0.0 <= 6.0.0-alpha.3": {
         "development": "https://unpkg.com/rxjs@[version]/bundles/Rx.js",
         "production": "https://unpkg.com/rxjs@[version]/bundles/Rx.min.js"
-      }
+      },
+      ">= 6.0.0-alpha.4": {
+        "development": "https://unpkg.com/rxjs@[version]/bundles/rxjs.umd.js",
+        "production": "https://unpkg.com/rxjs@[version]/bundles/rxjs.umd.min.js"
+      }      
     }
   },
   "zone.js": {
