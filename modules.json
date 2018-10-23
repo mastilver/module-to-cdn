@@ -99,7 +99,7 @@
     "var": "ReduxAct",
     "versions": {
       ">= 0.4.2 <= 1.1.1": {
-        "development": "https://unpkg.com/redux-act@[version]/dist/redux-act.js",
+        "deve§pment": "https://unpkg.com/redux-act@[version]/dist/redux-act.js",
         "production": "https://unpkg.com/redux-act@[version]/dist/redux-act.js"
       },
       ">= 1.1.2": {
@@ -394,5 +394,55 @@
         "production": "https://unpkg.com/jquery@[version]/dist/jquery.min.js"
       }
     }
-  }
+  },
+  "lodash": {
+    "var": "_",
+    "versions": {
+      "*": {
+        "development": "https://cdn.jsdelivr.net/npm/lodash@[version]/lodash.js",
+        "production": "https://cdn.jsdelivr.net/npm/lodash@[version]/lodash.min.js"
+      }
+    }
+  },
+  "styled-components": {
+    "versions": {
+      "*": {
+        "development": "https://cdn.jsdelivr.net/npm/styled-components@[version]/dist/styled-components.js",
+        "production": "https://cdn.jsdelivr.net/npm/styled-components@[version]/dist/styled-components.min.js"
+      }
+    }
+  },
+  "semantic-ui-react": {
+    "versions": {
+      "*": {
+        "development": "https://cdn.jsdelivr.net/npm/semantic-ui-react@[version]/dist/semantic-ui-react.js",
+        "production": "https://cdn.jsdelivr.net/npm/semantic-ui-react@[version]/dist/semantic-ui-react.min.js"
+      }
+    }
+  },
+  "react": {
+    "var": "React",
+    "versions": {
+      "*": {
+        "development": "https://cdn.jsdelivr.net/npm/react@[version]/react.js",
+        "production": "https://cdn.jsdelivr.net/npm/react@[version]/react.min.js"
+      }
+    }
+  },
+  "prop-types": {
+    "versions": {
+      "*": {
+        "development": "https://cdn.jsdelivr.net/npm/prop-types@[version]/prop-types.js",
+        "production": "https://cdn.jsdelivr.net/npm/prop-types@[version]/prop-types.min.js"
+      }
+    }
+  },
+  "react-dom": {
+    "versions": {
+      "*": {
+        "development": "https://cdn.jsdelivr.net/npm/react-dom@[version]/react-dom.js",
+        "production": "https://cdn.jsdelivr.net/npm/react-dom@[version]/react-dom.min.js"
+      }
+    }
+  },
 }

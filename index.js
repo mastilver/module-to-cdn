@@ -1,9 +1,15 @@
 'use strict';
 
 const semver = require('semver');
-
 const modules = require('./modules');
 
+/**
+ * Exchanges a CDN url from a passed module name and its specified version, and passed environment.
+ * @Param {string} moduleName
+ * @Param {string} version
+ * @Param {object} property 'env' for optional environment which defaults to 'development'.
+ * @returns {object} null if the module name or no matching semantic version is not found, or an object containing the name, var, url, and version properties
+ */
 module.exports = function (moduleName, version, options) {
     options = options || {};
     const env = options.env || 'development';
