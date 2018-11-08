@@ -2,9 +2,7 @@
 
 const semver = require('semver');
 
-const modules = require('./modules');
-
-module.exports = function (moduleName, version, options) {
+module.exports = function (moduleName, version, options, modules = require('./modules')) {
     options = options || {};
     const env = options.env || 'development';
 
