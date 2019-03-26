@@ -398,9 +398,9 @@
   "aframe": {
     "var": "aframe",
     "versions": {
-      ">= 0.1.0": {
-        "development": "https://aframe.io/releases/[version]/aframe.js",
-        "production": "https://aframe.io/releases/[version]/aframe.min.js"
+      ">= 0.9.0": {
+        "development": "https://unpkg.com/aframe@[version]/dist/aframe-master.js",
+        "production": "https://unpkg.com/aframe@[version]/dist/aframe-master.min.js"
       }
     }
   },
