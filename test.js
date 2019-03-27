@@ -36,14 +36,13 @@ for (const moduleName of moduleNames) {
     test.serial(`prod: ${moduleName}@next`, testNextModule, moduleName, 'production');
     test.serial(`dev: ${moduleName}@next`, testNextModule, moduleName, 'development');
 
-    getAllVersions(moduleName)
-        .filter(version => {
-            return versionRanges.some(range => semver.satisfies(version, range));
-        })
-        .forEach(version => {
-            test.serial(`prod: ${moduleName}@${version}`, testModule, moduleName, version, 'production');
-            test.serial(`dev: ${moduleName}@${version}`, testModule, moduleName, version, 'development');
-        });
+    const allVersions = getAllVersions(moduleName);
+    const testVersions = [].concat(...versionRanges.map(getRangeEdgeVersions(allVersions)));
+
+    testVersions.forEach(version => {
+        test.serial(`prod: ${moduleName}@${version}`, testModule, moduleName, version, 'production');
+        test.serial(`dev: ${moduleName}@${version}`, testModule, moduleName, version, 'development');
+    });
 }
 
 async function testModule(t, moduleName, version, env) {
@@ -97,6 +96,22 @@ function getModuleInfo(moduleName) {
 
 function getAllVersions(moduleName) {
     return getModuleInfo(moduleName).versions;
+}
+
+function getRangeEdgeVersions(allVersions) {
+    return function (range) {
+        const result = [];
+        const values = allVersions.filter(version => semver.satisfies(version, range));
+        if (values.length > 0) {
+            result.push(values[0]);
+        }
+
+        if (values.length > 1) {
+            result.push(values[values.length - 1]);
+        }
+
+        return result;
+    };
 }
 
 // https://stackoverflow.com/a/31625466/3052444
