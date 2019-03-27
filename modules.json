@@ -34,11 +34,11 @@
       },
       "> 1.0.0-beta.1 < 1.0.0": {
         "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
-        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.min.js"
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.umd.js"
       },
       ">= 1.0.0": {
         "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
-        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.umd.js"
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.min.js"
       }
     }
   },
