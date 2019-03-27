@@ -19,7 +19,7 @@
         "development": "https://unpkg.com/react-dom@[version]/dist/react-dom.js",
         "production": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
       },
-      ">= 16.0.0-alpha.7": {
+      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
         "development": "https://unpkg.com/react-dom@[version]/umd/react-dom.development.js",
         "production": "https://unpkg.com/react-dom@[version]/umd/react-dom.production.min.js"
       }
