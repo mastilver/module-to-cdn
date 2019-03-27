@@ -37,13 +37,13 @@ for (const moduleName of moduleNames) {
     test.serial(`dev: ${moduleName}@next`, testNextModule, moduleName, 'development');
 
     getAllVersions(moduleName)
-    .filter(version => {
-        return versionRanges.some(range => semver.satisfies(version, range));
-    })
-    .forEach(version => {
-        test.serial(`prod: ${moduleName}@${version}`, testModule, moduleName, version, 'production');
-        test.serial(`dev: ${moduleName}@${version}`, testModule, moduleName, version, 'development');
-    });
+        .filter(version => {
+            return versionRanges.some(range => semver.satisfies(version, range));
+        })
+        .forEach(version => {
+            test.serial(`prod: ${moduleName}@${version}`, testModule, moduleName, version, 'production');
+            test.serial(`dev: ${moduleName}@${version}`, testModule, moduleName, version, 'development');
+        });
 }
 
 async function testModule(t, moduleName, version, env) {
@@ -77,7 +77,7 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     t.true(cdnConfig.url.includes(version));
 
     await t.notThrowsAsync(async () => {
-        let {data} = await axios.get(cdnConfig.url);
+        const {data} = await axios.get(cdnConfig.url);
         if (cdnConfig.var != null) {
             t.true(isValidVarName(cdnConfig.var));
 
@@ -103,13 +103,13 @@ function getAllVersions(moduleName) {
 function isValidVarName(name) {
     try {
         if (name.indexOf('.') > -1) {
-            // e.g. ng.core would cause errors otherwise:
+            // E.g. ng.core would cause errors otherwise:
             name = name.split('.').join('_');
         }
 
         // eslint-disable-next-line no-eval
         return name.indexOf('}') === -1 && eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true');
-    } catch (err) {
+    } catch (error) {
         return false;
     }
 }
