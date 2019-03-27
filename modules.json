@@ -28,9 +28,13 @@
   "redux-saga": {
     "var": "ReduxSaga",
     "versions": {
-      ">= 0.4.0": {
+      ">= 0.4.0 < 1.0.2": {
         "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.js",
         "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.js"
+      },
+      ">= 1.0.2": {
+        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.min.js"
       }
     }
   },
@@ -299,7 +303,7 @@
   "core-js": {
     "var": "core",
     "versions": {
-      ">= 0.0.9": {
+      ">= 0.0.9 < 3.0.0": {
         "development": "https://unpkg.com/core-js@[version]/client/core.js",
         "production": "https://unpkg.com/core-js@[version]/client/core.min.js"
       }
@@ -326,9 +330,13 @@
   "rxjs": {
     "var": "Rx",
     "versions": {
-      "*": {
+      "< 6.0.0": {
         "development": "https://unpkg.com/rxjs@[version]/bundles/Rx.js",
         "production": "https://unpkg.com/rxjs@[version]/bundles/Rx.min.js"
+      },
+      ">= 6.0.0": {
+        "development": "https://unpkg.com/rxjs@[version]/bundles/rxjs.umd.js",
+        "production": "https://unpkg.com/rxjs@[version]/bundles/rxjs.umd.min.js"
       }
     }
   },
