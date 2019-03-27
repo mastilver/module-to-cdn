@@ -32,9 +32,13 @@
         "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.js",
         "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.js"
       },
-      "> 1.0.0-beta.1": {
+      "> 1.0.0-beta.1 < 1.0.0": {
         "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
         "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.min.js"
+      },
+      ">= 1.0.0": {
+        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.umd.js"
       }
     }
   },
@@ -354,12 +358,12 @@
   "preact": {
     "var": "preact",
     "versions": {
-      ">= 2.4.0": {
+      ">= 2.4.0 < 10.0.0-alpha.0": {
         "development": "https://unpkg.com/preact@[version]/dist/preact.js",
         "production": "https://unpkg.com/preact@[version]/dist/preact.min.js"
       },
       ">= 10.0.0-alpha.0": {
-        "development": "https://unpkg.com/preact@[version]/dist/preact.umd.js",
+        "development": "https://unpkg.com/preact@[version]/dist/preact.dev.js",
         "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
       }
     }
