@@ -6,7 +6,7 @@
         "development": "https://unpkg.com/react@[version]/dist/react.js",
         "production": "https://unpkg.com/react@[version]/dist/react.min.js"
       },
-      ">= 16.0.0-alpha.7": {
+      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
         "development": "https://unpkg.com/react@[version]/umd/react.development.js",
         "production": "https://unpkg.com/react@[version]/umd/react.production.min.js"
       }

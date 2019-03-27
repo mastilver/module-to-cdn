@@ -56,7 +56,7 @@ async function testNextModule(t, moduleName, env) {
     const tags = getModuleInfo(moduleName)['dist-tags'];
 
     if (!tags.next) {
-        return;
+        return t.pass();
     }
 
     const nextVersion = tags.next;
@@ -76,19 +76,19 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     t.truthy(cdnConfig.url);
     t.true(cdnConfig.url.includes(version));
 
-    let content = await t.notThrows(axios.get(cdnConfig.url).then(x => x.data), cdnConfig.url);
+    await t.notThrowsAsync(async () => {
+        let {data} = await axios.get(cdnConfig.url);
+        if (cdnConfig.var != null) {
+            t.true(isValidVarName(cdnConfig.var));
 
-    if (cdnConfig.var != null) {
-        content = content.replace(/ /g, '');
-
-        t.true(
-            content.includes(`.${cdnConfig.var}=`) ||
-            content.includes(`["${cdnConfig.var}"]=`) ||
-            content.includes(`['${cdnConfig.var}']=`)
-        );
-
-        t.true(isValidVarName(cdnConfig.var));
-    }
+            const content = data.replace(/ /g, '');
+            t.true(
+                content.includes(`.${cdnConfig.var}=`) ||
+                content.includes(`["${cdnConfig.var}"]=`) ||
+                content.includes(`['${cdnConfig.var}']=`),
+            );
+        }
+    }, cdnConfig.url);
 }
 
 function getModuleInfo(moduleName) {
