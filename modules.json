@@ -421,5 +421,14 @@
         "production": "https://unpkg.com/popper.js@[version]/dist/umd/popper.min.js"
       }
     }
+  },
+  "tooltip.js": {
+    "var": "Tooltip",
+    "versions": {
+      ">= 1.1.2": {
+        "development": "https://unpkg.com/tooltip.js@[version]/dist/umd/tooltip.js",
+        "production": "https://unpkg.com/tooltip.js@[version]/dist/umd/tooltip.min.js"
+      }
+    }
   }
 }
