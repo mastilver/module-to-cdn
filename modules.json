@@ -403,5 +403,14 @@
         "production": "https://unpkg.com/d3@[version]/dist/d3.min.js"
       }
     }
+  },
+  "bootstrap": {
+    "var": "bootstrap",
+    "versions": {
+      ">= 3.1.1": {
+        "development": "https://unpkg.com/bootstrap@[version]/dist/js/bootstrap.js",
+        "production": "https://unpkg.com/bootstrap@[version]/dist/js/bootstrap.min.js"
+      }
+    }
   }
 }
