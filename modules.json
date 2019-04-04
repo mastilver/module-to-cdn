@@ -412,5 +412,14 @@
         "production": "https://unpkg.com/bootstrap@[version]/dist/js/bootstrap.min.js"
       }
     }
+  },
+  "popper.js": {
+    "var": "Popper",
+    "versions": {
+      ">= 1.9.0": {
+        "development": "https://unpkg.com/popper.js@[version]/dist/umd/popper.js",
+        "production": "https://unpkg.com/popper.js@[version]/dist/umd/popper.min.js"
+      }
+    }
   }
 }
