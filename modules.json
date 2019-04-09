@@ -77,6 +77,15 @@
       }
     }
   },
+  "react-router": {
+    "var": "ReactRouter",
+    "versions": {
+      ">= 4.0.0": {
+        "development": "https://unpkg.com/react-router@[version]/umd/react-router.js",
+        "production": "https://unpkg.com/react-router@[version]/umd/react-router.min.js"
+      }
+    }
+  },
   "react-router-dom": {
     "var": "ReactRouterDOM",
     "versions": {
