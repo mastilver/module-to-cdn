@@ -362,8 +362,12 @@
         "development": "https://unpkg.com/preact@[version]/dist/preact.js",
         "production": "https://unpkg.com/preact@[version]/dist/preact.min.js"
       },
-      ">= 10.0.0-alpha.0": {
+      ">= 10.0.0-alpha.0 < 10.0.0-alpha.3": {
         "development": "https://unpkg.com/preact@[version]/dist/preact.dev.js",
+        "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
+      },
+      ">= 10.0.0-alpha.3": {
+        "development": "https://unpkg.com/preact@[version]/dist/preact.umd.js",
         "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
       }
     }
