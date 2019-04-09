@@ -36,11 +36,10 @@ for (const moduleName of moduleNames) {
     test.serial(`prod: ${moduleName}@next`, testNextModule, moduleName, 'production');
     test.serial(`dev: ${moduleName}@next`, testNextModule, moduleName, 'development');
 
-    getAllVersions(moduleName)
-    .filter(version => {
-        return versionRanges.some(range => semver.satisfies(version, range));
-    })
-    .forEach(version => {
+    const allVersions = getAllVersions(moduleName);
+    const testVersions = [].concat(...versionRanges.map(getRangeEdgeVersions(allVersions)));
+
+    testVersions.forEach(version => {
         test.serial(`prod: ${moduleName}@${version}`, testModule, moduleName, version, 'production');
         test.serial(`dev: ${moduleName}@${version}`, testModule, moduleName, version, 'development');
     });
@@ -56,7 +55,7 @@ async function testNextModule(t, moduleName, env) {
     const tags = getModuleInfo(moduleName)['dist-tags'];
 
     if (!tags.next) {
-        return;
+        return t.pass();
     }
 
     const nextVersion = tags.next;
@@ -76,19 +75,19 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     t.truthy(cdnConfig.url);
     t.true(cdnConfig.url.includes(version));
 
-    let content = await t.notThrows(axios.get(cdnConfig.url).then(x => x.data), cdnConfig.url);
+    await t.notThrowsAsync(async () => {
+        const {data} = await axios.get(cdnConfig.url);
+        if (cdnConfig.var != null) {
+            t.true(isValidVarName(cdnConfig.var));
 
-    if (cdnConfig.var != null) {
-        content = content.replace(/ /g, '');
-
-        t.true(
-            content.includes(`.${cdnConfig.var}=`) ||
-            content.includes(`["${cdnConfig.var}"]=`) ||
-            content.includes(`['${cdnConfig.var}']=`)
-        );
-
-        t.true(isValidVarName(cdnConfig.var));
-    }
+            const content = data.replace(/ /g, '');
+            t.true(
+                content.includes(`.${cdnConfig.var}=`) ||
+                content.includes(`["${cdnConfig.var}"]=`) ||
+                content.includes(`['${cdnConfig.var}']=`),
+            );
+        }
+    }, cdnConfig.url);
 }
 
 function getModuleInfo(moduleName) {
@@ -99,17 +98,33 @@ function getAllVersions(moduleName) {
     return getModuleInfo(moduleName).versions;
 }
 
+function getRangeEdgeVersions(allVersions) {
+    return function (range) {
+        const result = [];
+        const values = allVersions.filter(version => semver.satisfies(version, range));
+        if (values.length > 0) {
+            result.push(values[0]);
+        }
+
+        if (values.length > 1) {
+            result.push(values[values.length - 1]);
+        }
+
+        return result;
+    };
+}
+
 // https://stackoverflow.com/a/31625466/3052444
 function isValidVarName(name) {
     try {
         if (name.indexOf('.') > -1) {
-            // e.g. ng.core would cause errors otherwise:
+            // E.g. ng.core would cause errors otherwise:
             name = name.split('.').join('_');
         }
 
         // eslint-disable-next-line no-eval
         return name.indexOf('}') === -1 && eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true');
-    } catch (err) {
+    } catch (error) {
         return false;
     }
 }
