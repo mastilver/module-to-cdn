@@ -423,5 +423,14 @@
         "production": "https://unpkg.com/jquery@[version]/dist/jquery.min.js"
       }
     }
-  }
+  },
+  "aframe": {
+    "var": "aframe",
+    "versions": {
+      ">= 0.9.0": {
+        "development": "https://unpkg.com/aframe@[version]/dist/aframe-master.js",
+        "production": "https://unpkg.com/aframe@[version]/dist/aframe-master.min.js"
+      }
+    }
+  },
 }
