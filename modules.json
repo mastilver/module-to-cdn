@@ -423,5 +423,44 @@
         "production": "https://unpkg.com/jquery@[version]/dist/jquery.min.js"
       }
     }
+  },
+  "hyperapp": {
+    "var": "hyperapp",
+    "versions": {
+      ">= 0.0.12": {
+        "development": "https://unpkg.com/hyperapp@[version]/dist/hyperapp.js",
+        "production": "https://unpkg.com/hyperapp@[version]/dist/hyperapp.js"
+      }
+    }
+  },
+  "@hyperapp/router": {
+    "var": "hyperappRouter",
+    "versions": {
+      "*": {
+        "development": "https://unpkg.com/@hyperapp/router@[version]/dist/router.js",
+        "production": "https://unpkg.com/@hyperapp/router@[version]/dist/router.js"
+      }
+    }
+  },
+  "@hyperapp/render": {
+    "var": "hyperappRender",
+    "versions": {
+      "*": {
+        "development": "https://unpkg.com/@hyperapp/render@[version]/hyperapp-render.js",
+        "production": "https://unpkg.com/@hyperapp/render@[version]/hyperapp-render.min.js"
+      }
+    }
+  },
+  "@hyperapp/fx": {
+    "var": "hyperappFx",
+    "versions": {
+      "<= 0.6.1": {
+        "development": "https://unpkg.com/@hyperapp/fx@[version]/dist/fx.js",
+        "production": "https://unpkg.com/@hyperapp/fx@[version]/dist/fx.js"
+      },
+      ">= 0.7.0": {
+        "development": "https://unpkg.com/@hyperapp/fx@[version]/dist/hyperappFx.js",
+        "production": "https://unpkg.com/@hyperapp/fx@[version]/dist/hyperappFx.js"
+    }
   }
 }
