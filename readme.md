@@ -1,4 +1,4 @@
-# module-to-cdn [![Build Status](https://travis-ci.org/mastilver/module-to-cdn.svg?branch=master)](https://travis-ci.org/mastilver/module-to-cdn)
+# module-to-cdn [![Build Status](https://travis-ci.org/mastilver/module-to-cdn.svg?branch=master)](https://travis-ci.org/mastilver/module-to-cdn) [![Greenkeeper badge](https://badges.greenkeeper.io/JulianWielga/module-to-cdn.svg)](https://greenkeeper.io/)
 
 > Get cdn config from npm module name
 

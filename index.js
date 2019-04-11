@@ -22,7 +22,7 @@ module.exports = function (moduleName, version, options) {
     }
 
     const range = Object.keys(modules[moduleName].versions)
-                         .find(range => semver.satisfies(version, range));
+        .find(range => semver.satisfies(version, range));
     const config = modules[moduleName].versions[range];
 
     if (config == null) {

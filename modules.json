@@ -6,7 +6,7 @@
         "development": "https://unpkg.com/react@[version]/dist/react.js",
         "production": "https://unpkg.com/react@[version]/dist/react.min.js"
       },
-      ">= 16.0.0-alpha.7": {
+      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
         "development": "https://unpkg.com/react@[version]/umd/react.development.js",
         "production": "https://unpkg.com/react@[version]/umd/react.production.min.js"
       }
@@ -19,7 +19,7 @@
         "development": "https://unpkg.com/react-dom@[version]/dist/react-dom.js",
         "production": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
       },
-      ">= 16.0.0-alpha.7": {
+      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
         "development": "https://unpkg.com/react-dom@[version]/umd/react-dom.development.js",
         "production": "https://unpkg.com/react-dom@[version]/umd/react-dom.production.min.js"
       }
@@ -28,9 +28,17 @@
   "redux-saga": {
     "var": "ReduxSaga",
     "versions": {
-      ">= 0.4.0": {
+      ">= 0.4.0 <= 1.0.0-beta.1": {
         "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.js",
         "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.js"
+      },
+      "> 1.0.0-beta.1 < 1.0.0": {
+        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.umd.js"
+      },
+      ">= 1.0.0": {
+        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.min.js"
       }
     }
   },
@@ -66,6 +74,15 @@
       ">= 0.6.0": {
         "development": "https://unpkg.com/axios@[version]/dist/axios.js",
         "production": "https://unpkg.com/axios@[version]/dist/axios.min.js"
+      }
+    }
+  },
+  "react-router": {
+    "var": "ReactRouter",
+    "versions": {
+      ">= 4.0.0": {
+        "development": "https://unpkg.com/react-router@[version]/umd/react-router.js",
+        "production": "https://unpkg.com/react-router@[version]/umd/react-router.min.js"
       }
     }
   },
@@ -299,7 +316,7 @@
   "core-js": {
     "var": "core",
     "versions": {
-      ">= 0.0.9": {
+      ">= 0.0.9 < 3.0.0": {
         "development": "https://unpkg.com/core-js@[version]/client/core.js",
         "production": "https://unpkg.com/core-js@[version]/client/core.min.js"
       }
@@ -326,7 +343,7 @@
   "rxjs": {
     "var": "Rx",
     "versions": {
-      "*": {
+      "< 6.0.0": {
         "development": "https://unpkg.com/rxjs@[version]/bundles/Rx.js",
         "production": "https://unpkg.com/rxjs@[version]/bundles/Rx.min.js"
       }
@@ -344,9 +361,17 @@
   "preact": {
     "var": "preact",
     "versions": {
-      ">= 2.4.0": {
+      ">= 2.4.0 < 10.0.0-alpha.0": {
         "development": "https://unpkg.com/preact@[version]/dist/preact.js",
         "production": "https://unpkg.com/preact@[version]/dist/preact.min.js"
+      },
+      ">= 10.0.0-alpha.0 < 10.0.0-alpha.3": {
+        "development": "https://unpkg.com/preact@[version]/dist/preact.dev.js",
+        "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
+      },
+      ">= 10.0.0-alpha.3": {
+        "development": "https://unpkg.com/preact@[version]/dist/preact.umd.js",
+        "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
       }
     }
   },
@@ -380,9 +405,13 @@
   "file-saver": {
     "var": "saveAs",
     "versions": {
-      ">= 1.2.0 <= 1.3.3 || >= 1.3.8": {
+      ">= 1.2.0 <= 1.3.3 || >= 1.3.8 < 2.0.0-rc.1": {
         "development": "https://unpkg.com/file-saver@[version]/FileSaver.js",
         "production": "https://unpkg.com/file-saver@[version]/FileSaver.min.js"
+      },
+      ">= 2.0.0-rc.1": {
+        "development": "https://unpkg.com/file-saver@[version]/dist/FileSaver.js",
+        "production": "https://unpkg.com/file-saver@[version]/dist/FileSaver.min.js"
       }
     }
   },
