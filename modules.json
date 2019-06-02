@@ -423,5 +423,23 @@
         "production": "https://unpkg.com/jquery@[version]/dist/jquery.min.js"
       }
     }
+  },
+    "ag-grid": {
+    "var":null,
+    "versions": {
+      ">= 17.1.1": {
+        "development": "https://unpkg.com/ag-grid@[version]/dist/ag-grid.js",
+        "production": "https://unpkg.com/ag-grid@[version]/dist/ag-grid.min.js"
+      }
+    }
+  },
+  "ag-grid-enterprise": {
+    "var":null,
+    "versions": {
+      ">= 17.1.1": {
+        "development": "https://unpkg.com/ag-grid-enterprise@[version]/dist/ag-grid-enterprise.js",
+        "production": "https://unpkg.com/ag-grid-enterprise@[version]/dist/ag-grid-enterprise.min.js"
+      }
+    }
   }
 }
