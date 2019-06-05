@@ -423,5 +423,59 @@
         "production": "https://unpkg.com/jquery@[version]/dist/jquery.min.js"
       }
     }
+  },
+  "prop-types": {
+    "var": "PropTypes",
+    "versions": {
+      ">= 15.5.2": {
+        "development": "https://unpkg.com/prop-types@[version]/prop-types.js",
+        "production": "https://unpkg.com/prop-types@[version]/prop-types.min.js"
+      }
+    }
+  },
+  "hoist-non-react-statics": {
+    "var": "hoistNonReactStatics",
+    "versions": {
+      ">= 2.5.1": {
+        "development": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.js",
+        "production": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.min.js"
+      }
+    }
+  },
+  "react-lifecycles-compat": {
+    "var": "reactLifecyclesCompat",
+    "versions": {
+      ">= 1.0.0": {
+        "development": "https://unpkg.com/react-lifecycles-compat@[version]/react-lifecycles-compat.js",
+        "production": "https://unpkg.com/react-lifecycles-compat@[version]/react-lifecycles-compat.min.js"
+      }
+    }
+  },
+  "react-side-effect": {
+    "var": "withSideEffect",
+    "versions": {
+      ">= 1.1.4": {
+        "development": "https://unpkg.com/react-side-effect@[version]/lib/index.umd.js",
+        "production": "https://unpkg.com/react-side-effect@[version]/lib/index.umd.min.js"
+      }
+    }
+  },
+  "lodash": {
+    "var": "_",
+    "versions": {
+      ">= 4.5.1": {
+        "development": "https://unpkg.com/lodash@[version]/core.js",
+        "production": "https://unpkg.com/lodash@[version]/core.min.js"
+      }
+    }
+  },
+  "history": {
+    "var": "History",
+    "versions": {
+      ">= 2.1.1": {
+        "development": "https://unpkg.com/history@[version]/umd/history.js",
+        "production": "https://unpkg.com/history@[version]/umd/history.min.js"
+      }
+    }
   }
 }
