@@ -433,15 +433,6 @@
       }
     }
   },
-  "hoist-non-react-statics": {
-    "var": "hoistNonReactStatics",
-    "versions": {
-      ">= 2.5.1": {
-        "development": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.js",
-        "production": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.min.js"
-      }
-    }
-  },
   "react-lifecycles-compat": {
     "var": "reactLifecyclesCompat",
     "versions": {
