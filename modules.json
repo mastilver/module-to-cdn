@@ -6,7 +6,7 @@
         "development": "https://unpkg.com/react@[version]/dist/react.js",
         "production": "https://unpkg.com/react@[version]/dist/react.min.js"
       },
-      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
+      ">= 16.0.0-alpha.7 < 16.8.0 || > 16.8.0": {
         "development": "https://unpkg.com/react@[version]/umd/react.development.js",
         "production": "https://unpkg.com/react@[version]/umd/react.production.min.js"
       }
@@ -19,9 +19,22 @@
         "development": "https://unpkg.com/react-dom@[version]/dist/react-dom.js",
         "production": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
       },
-      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
+      ">= 16.0.0-alpha.7 < 16.8.0 || > 16.8.0": {
         "development": "https://unpkg.com/react-dom@[version]/umd/react-dom.development.js",
         "production": "https://unpkg.com/react-dom@[version]/umd/react-dom.production.min.js"
+      }
+    }
+  },
+  "react-dom/server": {
+    "var": "ReactDOMServer",
+    "versions": {
+      ">= 0.14.0 <= 16.0.0-alpha.6": {
+        "development": "https://unpkg.com/react-dom@[version]/dist/react-dom-server.js",
+        "production": "https://unpkg.com/react-dom@[version]/dist/react-dom-server.min.js"
+      },
+      ">= 16.0.0-alpha.7 < 16.8.0 || > 16.8.0": {
+        "development": "https://unpkg.com/react-dom@[version]/umd/react-dom-server.browser.development.js",
+        "production": "https://unpkg.com/react-dom@[version]/umd/react-dom-server.browser.production.min.js"
       }
     }
   },
@@ -433,15 +446,6 @@
       }
     }
   },
-  "hoist-non-react-statics": {
-    "var": "hoistNonReactStatics",
-    "versions": {
-      ">= 2.5.1": {
-        "development": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.js",
-        "production": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.min.js"
-      }
-    }
-  },
   "react-lifecycles-compat": {
     "var": "reactLifecyclesCompat",
     "versions": {
@@ -464,8 +468,8 @@
     "var": "_",
     "versions": {
       ">= 4.5.1": {
-        "development": "https://unpkg.com/lodash@[version]/core.js",
-        "production": "https://unpkg.com/lodash@[version]/core.min.js"
+        "development": "https://unpkg.com/lodash@[version]/lodash.js",
+        "production": "https://unpkg.com/lodash@[version]/lodash.min.js"
       }
     }
   },
