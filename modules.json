@@ -28,7 +28,7 @@
   "react-dom/server": {
     "var": "ReactDOMServer",
     "versions": {
-      ">= 0.14.0 <= 16.0.0-alpha.6": {
+      ">= 3.1.6 <= 16.0.0-alpha.6": {
         "development": "https://unpkg.com/react-dom@[version]/dist/react-dom-server.js",
         "production": "https://unpkg.com/react-dom@[version]/dist/react-dom-server.min.js"
       },
