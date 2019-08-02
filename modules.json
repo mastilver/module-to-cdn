@@ -6,7 +6,7 @@
         "development": "https://unpkg.com/react@[version]/dist/react.js",
         "production": "https://unpkg.com/react@[version]/dist/react.min.js"
       },
-      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
+      ">= 16.0.0-alpha.7 < 16.8.0 || > 16.8.0": {
         "development": "https://unpkg.com/react@[version]/umd/react.development.js",
         "production": "https://unpkg.com/react@[version]/umd/react.production.min.js"
       }
@@ -19,9 +19,22 @@
         "development": "https://unpkg.com/react-dom@[version]/dist/react-dom.js",
         "production": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
       },
-      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
+      ">= 16.0.0-alpha.7 < 16.8.0 || > 16.8.0": {
         "development": "https://unpkg.com/react-dom@[version]/umd/react-dom.development.js",
         "production": "https://unpkg.com/react-dom@[version]/umd/react-dom.production.min.js"
+      }
+    }
+  },
+  "react-dom/server": {
+    "var": "ReactDOMServer",
+    "versions": {
+      ">= 3.1.6 <= 16.0.0-alpha.6": {
+        "development": "https://unpkg.com/react-dom@[version]/dist/react-dom-server.js",
+        "production": "https://unpkg.com/react-dom@[version]/dist/react-dom-server.min.js"
+      },
+      ">= 16.0.0-alpha.7 < 16.8.0 || > 16.8.0": {
+        "development": "https://unpkg.com/react-dom@[version]/umd/react-dom-server.browser.development.js",
+        "production": "https://unpkg.com/react-dom@[version]/umd/react-dom-server.browser.production.min.js"
       }
     }
   },
