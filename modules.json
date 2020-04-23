@@ -1,188 +1,4 @@
 {
-  "react": {
-    "var": "React",
-    "versions": {
-      ">= 0.11.0 <= 16.0.0-alpha.6": {
-        "development": "https://unpkg.com/react@[version]/dist/react.js",
-        "production": "https://unpkg.com/react@[version]/dist/react.min.js"
-      },
-      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
-        "development": "https://unpkg.com/react@[version]/umd/react.development.js",
-        "production": "https://unpkg.com/react@[version]/umd/react.production.min.js"
-      }
-    }
-  },
-  "react-dom": {
-    "var": "ReactDOM",
-    "versions": {
-      ">= 0.14.0 <= 16.0.0-alpha.6": {
-        "development": "https://unpkg.com/react-dom@[version]/dist/react-dom.js",
-        "production": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
-      },
-      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
-        "development": "https://unpkg.com/react-dom@[version]/umd/react-dom.development.js",
-        "production": "https://unpkg.com/react-dom@[version]/umd/react-dom.production.min.js"
-      }
-    }
-  },
-  "redux-saga": {
-    "var": "ReduxSaga",
-    "versions": {
-      ">= 0.4.0 <= 1.0.0-beta.1": {
-        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.js",
-        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.js"
-      },
-      "> 1.0.0-beta.1 < 1.0.0": {
-        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
-        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.umd.js"
-      },
-      ">= 1.0.0": {
-        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
-        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.min.js"
-      }
-    }
-  },
-  "babel-polyfill": {
-    "versions": {
-      "*": {
-        "development": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.js",
-        "production": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.min.js"
-      }
-    }
-  },
-  "redux": {
-    "var": "Redux",
-    "versions": {
-      ">= 0.12.0": {
-        "development": "https://unpkg.com/redux@[version]/dist/redux.js",
-        "production": "https://unpkg.com/redux@[version]/dist/redux.min.js"
-      }
-    }
-  },
-  "react-redux": {
-    "var": "ReactRedux",
-    "versions": {
-      ">= 0.3.0 < 5.0.0 || >= 5.0.1": {
-        "development": "https://unpkg.com/react-redux@[version]/dist/react-redux.js",
-        "production": "https://unpkg.com/react-redux@[version]/dist/react-redux.min.js"
-      }
-    }
-  },
-  "axios": {
-    "var": "axios",
-    "versions": {
-      ">= 0.6.0": {
-        "development": "https://unpkg.com/axios@[version]/dist/axios.js",
-        "production": "https://unpkg.com/axios@[version]/dist/axios.min.js"
-      }
-    }
-  },
-  "react-router": {
-    "var": "ReactRouter",
-    "versions": {
-      ">= 4.0.0": {
-        "development": "https://unpkg.com/react-router@[version]/umd/react-router.js",
-        "production": "https://unpkg.com/react-router@[version]/umd/react-router.min.js"
-      }
-    }
-  },
-  "react-router-dom": {
-    "var": "ReactRouterDOM",
-    "versions": {
-      ">= 4.0.0": {
-        "development": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.js",
-        "production": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.min.js"
-      }
-    }
-  },
-  "tachyons": {
-    "versions": {
-      "*": {
-        "development": "https://unpkg.com/tachyons@[version]/css/tachyons.css",
-        "production": "https://unpkg.com/tachyons@[version]/css/tachyons.min.css"
-      }
-    }
-  },
-  "auth0-lock": {
-    "var": "Auth0Lock",
-    "versions": {
-      ">= 10.0.0": {
-        "development": "https://cdn.auth0.com/js/lock/[version]/lock.js",
-        "production": "https://cdn.auth0.com/js/lock/[version]/lock.min.js"
-      }
-    }
-  },
-  "redux-act": {
-    "var": "ReduxAct",
-    "versions": {
-      ">= 0.4.2 <= 1.1.1": {
-        "development": "https://unpkg.com/redux-act@[version]/dist/redux-act.js",
-        "production": "https://unpkg.com/redux-act@[version]/dist/redux-act.js"
-      },
-      ">= 1.1.2": {
-        "development": "https://unpkg.com/redux-act@[version]/dist/redux-act.js",
-        "production": "https://unpkg.com/redux-act@[version]/dist/redux-act.min.js"
-      }
-    }
-  },
-  "jwt-decode": {
-    "var": "jwt_decode",
-    "versions": {
-      "*": {
-        "development": "https://unpkg.com/jwt-decode@[version]/build/jwt-decode.js",
-        "production": "https://unpkg.com/jwt-decode@[version]/build/jwt-decode.min.js"
-      }
-    }
-  },
-  "redux-thunk": {
-    "var": "ReduxThunk",
-    "versions": {
-      ">= 2.0.1": {
-        "development": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.js",
-        "production": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.min.js"
-      }
-    }
-  },
-  "object-assign": {
-    "var": "ObjectAssign",
-    "versions": {
-      ">= 4.1.1": {
-        "development": "https://unpkg.com/@umds/object-assign@[version]-beta.24/object-assign.js",
-        "production": "https://unpkg.com/@umds/object-assign@[version]-beta.24/object-assign.min.js"
-      }
-    }
-  },
-  "redux-act-async": {
-    "var": "ReduxActAsync",
-    "versions": {
-      ">= 1.6.0": {
-        "development": "https://unpkg.com/@umds/redux-act-async@[version]-beta.24/redux-act-async.js",
-        "production": "https://unpkg.com/@umds/redux-act-async@[version]-beta.24/redux-act-async.min.js"
-      }
-    }
-  },
-  "mobx": {
-    "var": "mobx",
-    "versions": {
-      ">= 2.1.3": {
-        "development": "https://unpkg.com/mobx@[version]/lib/mobx.umd.js",
-        "production": "https://unpkg.com/mobx@[version]/lib/mobx.umd.min.js"
-      }
-    }
-  },
-  "vue": {
-    "var": "Vue",
-    "versions": {
-      ">= 0.8.7 <= 2.0.3": {
-        "development": "https://unpkg.com/vue@[version]/dist/vue.js",
-        "production": "https://unpkg.com/vue@[version]/dist/vue.min.js"
-      },
-      ">= 2.0.4": {
-        "development": "https://unpkg.com/vue@[version]/dist/vue.runtime.js",
-        "production": "https://unpkg.com/vue@[version]/dist/vue.runtime.min.js"
-      }
-    }
-  },
   "angular": {
     "var": "angular",
     "versions": {
@@ -193,6 +9,24 @@
       ">= 1.2.27": {
         "development": "https://unpkg.com/angular@[version]/angular.js",
         "production": "https://unpkg.com/angular@[version]/angular.min.js"
+      }
+    }
+  },
+  "@angular/animations": {
+    "var": "ng.animations",
+    "versions": {
+      ">=2.0.0": {
+        "development": "https://unpkg.com/@angular/animations@[version]/bundles/animations.umd.js",
+        "production": "https://unpkg.com/@angular/animations@[version]/bundles/animations.umd.min.js"
+      }
+    }
+  },
+  "@angular/animations/browser": {
+    "var": "ng.animations.browser",
+    "versions": {
+      ">=2.1.0 < 3.0.0 || >= 4.0.0": {
+        "development": "https://unpkg.com/@angular/animations@[version]/bundles/animations-browser.umd.js",
+        "production": "https://unpkg.com/@angular/animations@[version]/bundles/animations-browser.umd.min.js"
       }
     }
   },
@@ -232,21 +66,12 @@
       }
     }
   },
-  "@angular/animations": {
-    "var": "ng.animations",
+  "@angular/forms": {
+    "var": "ng.forms",
     "versions": {
       ">=2.0.0": {
-        "development": "https://unpkg.com/@angular/animations@[version]/bundles/animations.umd.js",
-        "production": "https://unpkg.com/@angular/animations@[version]/bundles/animations.umd.min.js"
-      }
-    }
-  },
-  "@angular/animations/browser": {
-    "var": "ng.animations.browser",
-    "versions": {
-      ">=2.1.0 < 3.0.0 || >= 4.0.0": {
-        "development": "https://unpkg.com/@angular/animations@[version]/bundles/animations-browser.umd.js",
-        "production": "https://unpkg.com/@angular/animations@[version]/bundles/animations-browser.umd.min.js"
+        "development": "https://unpkg.com/@angular/forms@[version]/bundles/forms.umd.js",
+        "production": "https://unpkg.com/@angular/forms@[version]/bundles/forms.umd.min.js"
       }
     }
   },
@@ -256,15 +81,6 @@
       ">=2.0.0": {
         "development": "https://unpkg.com/@angular/http@[version]/bundles/http.umd.js",
         "production": "https://unpkg.com/@angular/http@[version]/bundles/http.umd.min.js"
-      }
-    }
-  },
-  "@angular/forms": {
-    "var": "ng.forms",
-    "versions": {
-      ">=2.0.0": {
-        "development": "https://unpkg.com/@angular/forms@[version]/bundles/forms.umd.js",
-        "production": "https://unpkg.com/@angular/forms@[version]/bundles/forms.umd.min.js"
       }
     }
   },
@@ -313,12 +129,286 @@
       }
     }
   },
+  "auth0-lock": {
+    "var": "Auth0Lock",
+    "versions": {
+      ">= 10.0.0": {
+        "development": "https://cdn.auth0.com/js/lock/[version]/lock.js",
+        "production": "https://cdn.auth0.com/js/lock/[version]/lock.min.js"
+      }
+    }
+  },
+  "axios": {
+    "var": "axios",
+    "versions": {
+      ">= 0.6.0": {
+        "development": "https://unpkg.com/axios@[version]/dist/axios.js",
+        "production": "https://unpkg.com/axios@[version]/dist/axios.min.js"
+      }
+    }
+  },
+  "babel-polyfill": {
+    "versions": {
+      "*": {
+        "development": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.js",
+        "production": "https://unpkg.com/babel-polyfill@[version]/dist/polyfill.min.js"
+      }
+    }
+  },
   "core-js": {
     "var": "core",
     "versions": {
       ">= 0.0.9 < 3.0.0": {
         "development": "https://unpkg.com/core-js@[version]/client/core.js",
         "production": "https://unpkg.com/core-js@[version]/client/core.min.js"
+      }
+    }
+  },
+  "file-saver": {
+    "var": "saveAs",
+    "versions": {
+      ">= 1.2.0 <= 1.3.3 || >= 1.3.8 < 2.0.0-rc.1": {
+        "development": "https://unpkg.com/file-saver@[version]/FileSaver.js",
+        "production": "https://unpkg.com/file-saver@[version]/FileSaver.min.js"
+      },
+      ">= 2.0.0-rc.1": {
+        "development": "https://unpkg.com/file-saver@[version]/dist/FileSaver.js",
+        "production": "https://unpkg.com/file-saver@[version]/dist/FileSaver.min.js"
+      }
+    }
+  },
+  "history": {
+    "var": "History",
+    "versions": {
+      ">= 2.1.1": {
+        "development": "https://unpkg.com/history@[version]/umd/history.js",
+        "production": "https://unpkg.com/history@[version]/umd/history.min.js"
+      }
+    }
+  },
+  "hoist-non-react-statics": {
+    "var": "hoistNonReactStatics",
+    "versions": {
+      ">= 2.5.1": {
+        "development": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.js",
+        "production": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.min.js"
+      }
+    }
+  },
+  "jquery": {
+    "var": "$",
+    "versions": {
+      ">= 2.1.1": {
+        "development": "https://unpkg.com/jquery@[version]/dist/jquery.js",
+        "production": "https://unpkg.com/jquery@[version]/dist/jquery.min.js"
+      }
+    }
+  },
+  "jszip": {
+    "var": "JSZip",
+    "versions": {
+      ">= 2.6.0": {
+        "development": "https://unpkg.com/jszip@[version]/dist/jszip.js",
+        "production": "https://unpkg.com/jszip@[version]/dist/jszip.min.js"
+      }
+    }
+  },
+  "jwt-decode": {
+    "var": "jwt_decode",
+    "versions": {
+      "*": {
+        "development": "https://unpkg.com/jwt-decode@[version]/build/jwt-decode.js",
+        "production": "https://unpkg.com/jwt-decode@[version]/build/jwt-decode.min.js"
+      }
+    }
+  },
+  "lodash": {
+    "var": "_",
+    "versions": {
+      ">= 4.5.1": {
+        "development": "https://unpkg.com/lodash@[version]/core.js",
+        "production": "https://unpkg.com/lodash@[version]/core.min.js"
+      }
+    }
+  },
+  "mobx": {
+    "var": "mobx",
+    "versions": {
+      ">= 2.1.3": {
+        "development": "https://unpkg.com/mobx@[version]/lib/mobx.umd.js",
+        "production": "https://unpkg.com/mobx@[version]/lib/mobx.umd.min.js"
+      }
+    }
+  },
+  "object-assign": {
+    "var": "ObjectAssign",
+    "versions": {
+      ">= 4.1.1": {
+        "development": "https://unpkg.com/@umds/object-assign@[version]-beta.24/object-assign.js",
+        "production": "https://unpkg.com/@umds/object-assign@[version]-beta.24/object-assign.min.js"
+      }
+    }
+  },
+  "preact": {
+    "var": "preact",
+    "versions": {
+      ">= 2.4.0 < 10.0.0-alpha.0": {
+        "development": "https://unpkg.com/preact@[version]/dist/preact.js",
+        "production": "https://unpkg.com/preact@[version]/dist/preact.min.js"
+      },
+      ">= 10.0.0-alpha.0 < 10.0.0-alpha.3": {
+        "development": "https://unpkg.com/preact@[version]/dist/preact.dev.js",
+        "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
+      },
+      ">= 10.0.0-alpha.3": {
+        "development": "https://unpkg.com/preact@[version]/dist/preact.umd.js",
+        "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
+      }
+    }
+  },
+  "preact-compat": {
+    "var": "preactCompat",
+    "versions": {
+      ">= 1.0.0": {
+        "development": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.js",
+        "production": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.min.js"
+      }
+    }
+  },
+  "prop-types": {
+    "var": "PropTypes",
+    "versions": {
+      ">= 15.5.2": {
+        "development": "https://unpkg.com/prop-types@[version]/prop-types.js",
+        "production": "https://unpkg.com/prop-types@[version]/prop-types.min.js"
+      }
+    }
+  },
+  "react": {
+    "var": "React",
+    "versions": {
+      ">= 0.11.0 <= 16.0.0-alpha.6": {
+        "development": "https://unpkg.com/react@[version]/dist/react.js",
+        "production": "https://unpkg.com/react@[version]/dist/react.min.js"
+      },
+      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
+        "development": "https://unpkg.com/react@[version]/umd/react.development.js",
+        "production": "https://unpkg.com/react@[version]/umd/react.production.min.js"
+      }
+    }
+  },
+  "react-lifecycles-compat": {
+    "var": "reactLifecyclesCompat",
+    "versions": {
+      ">= 1.0.0": {
+        "development": "https://unpkg.com/react-lifecycles-compat@[version]/react-lifecycles-compat.js",
+        "production": "https://unpkg.com/react-lifecycles-compat@[version]/react-lifecycles-compat.min.js"
+      }
+    }
+  },
+  "react-dom": {
+    "var": "ReactDOM",
+    "versions": {
+      ">= 0.14.0 <= 16.0.0-alpha.6": {
+        "development": "https://unpkg.com/react-dom@[version]/dist/react-dom.js",
+        "production": "https://unpkg.com/react-dom@[version]/dist/react-dom.min.js"
+      },
+      ">= 16.0.0-alpha.7 < 16.6.2 || > 16.6.2": {
+        "development": "https://unpkg.com/react-dom@[version]/umd/react-dom.development.js",
+        "production": "https://unpkg.com/react-dom@[version]/umd/react-dom.production.min.js"
+      }
+    }
+  },
+  "react-router": {
+    "var": "ReactRouter",
+    "versions": {
+      ">= 4.0.0": {
+        "development": "https://unpkg.com/react-router@[version]/umd/react-router.js",
+        "production": "https://unpkg.com/react-router@[version]/umd/react-router.min.js"
+      }
+    }
+  },
+  "react-router-dom": {
+    "var": "ReactRouterDOM",
+    "versions": {
+      ">= 4.0.0": {
+        "development": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.js",
+        "production": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.min.js"
+      }
+    }
+  },
+  "react-redux": {
+    "var": "ReactRedux",
+    "versions": {
+      ">= 0.3.0 < 5.0.0 || >= 5.0.1": {
+        "development": "https://unpkg.com/react-redux@[version]/dist/react-redux.js",
+        "production": "https://unpkg.com/react-redux@[version]/dist/react-redux.min.js"
+      }
+    }
+  },
+  "react-side-effect": {
+    "var": "withSideEffect",
+    "versions": {
+      ">= 1.1.4": {
+        "development": "https://unpkg.com/react-side-effect@[version]/lib/index.umd.js",
+        "production": "https://unpkg.com/react-side-effect@[version]/lib/index.umd.min.js"
+      }
+    }
+  },
+  "redux": {
+    "var": "Redux",
+    "versions": {
+      ">= 0.12.0": {
+        "development": "https://unpkg.com/redux@[version]/dist/redux.js",
+        "production": "https://unpkg.com/redux@[version]/dist/redux.min.js"
+      }
+    }
+  },
+  "redux-act": {
+    "var": "ReduxAct",
+    "versions": {
+      ">= 0.4.2 <= 1.1.1": {
+        "development": "https://unpkg.com/redux-act@[version]/dist/redux-act.js",
+        "production": "https://unpkg.com/redux-act@[version]/dist/redux-act.js"
+      },
+      ">= 1.1.2": {
+        "development": "https://unpkg.com/redux-act@[version]/dist/redux-act.js",
+        "production": "https://unpkg.com/redux-act@[version]/dist/redux-act.min.js"
+      }
+    }
+  },
+  "redux-act-async": {
+    "var": "ReduxActAsync",
+    "versions": {
+      ">= 1.6.0": {
+        "development": "https://unpkg.com/@umds/redux-act-async@[version]-beta.24/redux-act-async.js",
+        "production": "https://unpkg.com/@umds/redux-act-async@[version]-beta.24/redux-act-async.min.js"
+      }
+    }
+  },
+  "redux-saga": {
+    "var": "ReduxSaga",
+    "versions": {
+      ">= 0.4.0 <= 1.0.0-beta.1": {
+        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.js",
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.js"
+      },
+      "> 1.0.0-beta.1 < 1.0.0": {
+        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.min.umd.js"
+      },
+      ">= 1.0.0": {
+        "development": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.js",
+        "production": "https://unpkg.com/redux-saga@[version]/dist/redux-saga.umd.min.js"
+      }
+    }
+  },
+  "redux-thunk": {
+    "var": "ReduxThunk",
+    "versions": {
+      ">= 2.0.1": {
+        "development": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.js",
+        "production": "https://unpkg.com/redux-thunk@[version]/dist/redux-thunk.min.js"
       }
     }
   },
@@ -349,41 +439,6 @@
       }
     }
   },
-  "zone.js": {
-    "var": "Zone",
-    "versions": {
-      ">= 0.5.0 <= 0.6.26 || >= 0.7.2": {
-        "development": "https://unpkg.com/zone.js@[version]/dist/zone.js",
-        "production": "https://unpkg.com/zone.js@[version]/dist/zone.min.js"
-      }
-    }
-  },
-  "preact": {
-    "var": "preact",
-    "versions": {
-      ">= 2.4.0 < 10.0.0-alpha.0": {
-        "development": "https://unpkg.com/preact@[version]/dist/preact.js",
-        "production": "https://unpkg.com/preact@[version]/dist/preact.min.js"
-      },
-      ">= 10.0.0-alpha.0 < 10.0.0-alpha.3": {
-        "development": "https://unpkg.com/preact@[version]/dist/preact.dev.js",
-        "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
-      },
-      ">= 10.0.0-alpha.3": {
-        "development": "https://unpkg.com/preact@[version]/dist/preact.umd.js",
-        "production": "https://unpkg.com/preact@[version]/dist/preact.umd.js"
-      }
-    }
-  },
-  "preact-compat": {
-    "var": "preactCompat",
-    "versions": {
-      ">= 1.0.0": {
-        "development": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.js",
-        "production": "https://unpkg.com/preact-compat@[version]/dist/preact-compat.min.js"
-      }
-    }
-  },
   "semantic-ui": {
     "var": null,
     "versions": {
@@ -393,88 +448,33 @@
       }
     }
   },
-  "jszip": {
-    "var": "JSZip",
+  "tachyons": {
     "versions": {
-      ">= 2.6.0": {
-        "development": "https://unpkg.com/jszip@[version]/dist/jszip.js",
-        "production": "https://unpkg.com/jszip@[version]/dist/jszip.min.js"
+      "*": {
+        "development": "https://unpkg.com/tachyons@[version]/css/tachyons.css",
+        "production": "https://unpkg.com/tachyons@[version]/css/tachyons.min.css"
       }
     }
   },
-  "file-saver": {
-    "var": "saveAs",
+  "vue": {
+    "var": "Vue",
     "versions": {
-      ">= 1.2.0 <= 1.3.3 || >= 1.3.8 < 2.0.0-rc.1": {
-        "development": "https://unpkg.com/file-saver@[version]/FileSaver.js",
-        "production": "https://unpkg.com/file-saver@[version]/FileSaver.min.js"
+      ">= 0.8.7 <= 2.0.3": {
+        "development": "https://unpkg.com/vue@[version]/dist/vue.js",
+        "production": "https://unpkg.com/vue@[version]/dist/vue.min.js"
       },
-      ">= 2.0.0-rc.1": {
-        "development": "https://unpkg.com/file-saver@[version]/dist/FileSaver.js",
-        "production": "https://unpkg.com/file-saver@[version]/dist/FileSaver.min.js"
+      ">= 2.0.4": {
+        "development": "https://unpkg.com/vue@[version]/dist/vue.runtime.js",
+        "production": "https://unpkg.com/vue@[version]/dist/vue.runtime.min.js"
       }
     }
   },
-  "jquery": {
-    "var": "$",
+  "zone.js": {
+    "var": "Zone",
     "versions": {
-      ">= 2.1.1": {
-        "development": "https://unpkg.com/jquery@[version]/dist/jquery.js",
-        "production": "https://unpkg.com/jquery@[version]/dist/jquery.min.js"
-      }
-    }
-  },
-  "prop-types": {
-    "var": "PropTypes",
-    "versions": {
-      ">= 15.5.2": {
-        "development": "https://unpkg.com/prop-types@[version]/prop-types.js",
-        "production": "https://unpkg.com/prop-types@[version]/prop-types.min.js"
-      }
-    }
-  },
-  "hoist-non-react-statics": {
-    "var": "hoistNonReactStatics",
-    "versions": {
-      ">= 2.5.1": {
-        "development": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.js",
-        "production": "https://unpkg.com/hoist-non-react-statics@[version]/dist/hoist-non-react-statics.min.js"
-      }
-    }
-  },
-  "react-lifecycles-compat": {
-    "var": "reactLifecyclesCompat",
-    "versions": {
-      ">= 1.0.0": {
-        "development": "https://unpkg.com/react-lifecycles-compat@[version]/react-lifecycles-compat.js",
-        "production": "https://unpkg.com/react-lifecycles-compat@[version]/react-lifecycles-compat.min.js"
-      }
-    }
-  },
-  "react-side-effect": {
-    "var": "withSideEffect",
-    "versions": {
-      ">= 1.1.4": {
-        "development": "https://unpkg.com/react-side-effect@[version]/lib/index.umd.js",
-        "production": "https://unpkg.com/react-side-effect@[version]/lib/index.umd.min.js"
-      }
-    }
-  },
-  "lodash": {
-    "var": "_",
-    "versions": {
-      ">= 4.5.1": {
-        "development": "https://unpkg.com/lodash@[version]/core.js",
-        "production": "https://unpkg.com/lodash@[version]/core.min.js"
-      }
-    }
-  },
-  "history": {
-    "var": "History",
-    "versions": {
-      ">= 2.1.1": {
-        "development": "https://unpkg.com/history@[version]/umd/history.js",
-        "production": "https://unpkg.com/history@[version]/umd/history.min.js"
+      ">= 0.5.0 <= 0.6.26 || >= 0.7.2": {
+        "development": "https://unpkg.com/zone.js@[version]/dist/zone.js",
+        "production": "https://unpkg.com/zone.js@[version]/dist/zone.min.js"
       }
     }
   }
