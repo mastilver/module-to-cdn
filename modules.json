@@ -177,6 +177,15 @@
       }
     }
   },
+  "highcharts": {
+    "var": "highcharts",
+    "versions": {
+      ">= 6.0.0": {
+        "development": "https://unpkg.com/highcharts@[version]/highcharts.js",
+        "production": "https://unpkg.com/highcharts@[version]/highcharts.min.js"
+      }
+    }
+  },
   "history": {
     "var": "History",
     "versions": {
