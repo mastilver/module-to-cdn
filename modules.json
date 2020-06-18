@@ -346,6 +346,10 @@
       "< 6.0.0": {
         "development": "https://unpkg.com/rxjs@[version]/bundles/Rx.js",
         "production": "https://unpkg.com/rxjs@[version]/bundles/Rx.min.js"
+      },
+      ">= 6.0.0": {
+        "development": "https://unpkg.com/rxjs@[version]/bundles/rxjs.umd.js",
+        "production": "https://unpkg.com/rxjs@[version]/bundles/rxjs.umd.min.js"
       }
     }
   },
