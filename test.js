@@ -1,10 +1,10 @@
-import test from 'ava';
-import axios from 'axios';
-import execa from 'execa';
-import semver from 'semver';
+const test = require('ava');
+const axios = require('axios');
+const execa = require('execa');
+const semver = require('semver');
 
-import modules from './modules';
-import fn from '.';
+const modules = require('./modules');
+const fn = require('.');
 
 const moduleNames = Object.keys(modules);
 
@@ -38,7 +38,7 @@ for (const moduleName of moduleNames) {
 
     const allVersions = getAllVersions(moduleName);
     const testVersions = [].concat(...versionRanges.map(getRangeEdgeVersions(allVersions)));
-
+    console.log(moduleName, testVersions);
     testVersions.forEach(version => {
         test.serial(`prod: ${moduleName}@${version}`, testModule, moduleName, version, 'production');
         test.serial(`dev: ${moduleName}@${version}`, testModule, moduleName, version, 'development');
@@ -62,7 +62,9 @@ async function testNextModule(t, moduleName, env) {
     const futureVersion = removePrereleaseItentifiers(nextVersion);
 
     const cdnConfig = fn(moduleName, futureVersion, {env});
-
+    if (!cdnConfig) {
+        return t.pass(`no next support for ${moduleName}`);
+    }
     cdnConfig.url = cdnConfig.url.replace(futureVersion, nextVersion);
 
     await testCdnConfig(t, cdnConfig, moduleName, nextVersion);
@@ -76,8 +78,16 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     t.true(cdnConfig.url.includes(version));
 
     await t.notThrowsAsync(async () => {
-        const {data} = await axios.get(cdnConfig.url);
-        if (cdnConfig.var != null) {
+        let data
+        try {
+            response = await axios.get(cdnConfig.url);
+            data = response.data
+        } catch(e) {
+            console.error(cdnConfig.url, e.message);
+            t.true(false);
+            return;
+        }
+        if (!!cdnConfig.var) {
             t.true(isValidVarName(cdnConfig.var));
 
             const content = data.replace(/ /g, '');
