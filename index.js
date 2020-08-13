@@ -34,7 +34,7 @@ module.exports = function (moduleName, version, options) {
 
     return {
         name: moduleName,
-        var: modules[moduleName].var,
+        var: modules[moduleName].var || modules[moduleName].versions[range].var,
         url,
         version
     };
