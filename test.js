@@ -62,9 +62,11 @@ async function testNextModule(t, moduleName, env) {
     const futureVersion = removePrereleaseItentifiers(nextVersion);
 
     const cdnConfig = fn(moduleName, futureVersion, {env});
+
     if (!cdnConfig) {
         return t.pass(`no next support for ${moduleName}`);
     }
+
     cdnConfig.url = cdnConfig.url.replace(futureVersion, nextVersion);
 
     await testCdnConfig(t, cdnConfig, moduleName, nextVersion);
@@ -78,23 +80,24 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     t.true(cdnConfig.url.includes(version));
 
     await t.notThrowsAsync(async () => {
-        let data
+        let data;
         try {
-            response = await axios.get(cdnConfig.url);
-            data = response.data
-        } catch(e) {
-            console.error(cdnConfig.url, e.message);
+            const response = await axios.get(cdnConfig.url);
+            data = response.data;
+        } catch (error) {
+            console.error(cdnConfig.url, error.message);
             t.true(false);
             return;
         }
-        if (!!cdnConfig.var) {
+
+        if (cdnConfig.var) {
             t.true(isValidVarName(cdnConfig.var));
 
             const content = data.replace(/ /g, '');
             t.true(
                 content.includes(`.${cdnConfig.var}=`) ||
                 content.includes(`["${cdnConfig.var}"]=`) ||
-                content.includes(`['${cdnConfig.var}']=`),
+                content.includes(`['${cdnConfig.var}']=`)
             );
         }
     }, cdnConfig.url);
@@ -127,14 +130,15 @@ function getRangeEdgeVersions(allVersions) {
 // https://stackoverflow.com/a/31625466/3052444
 function isValidVarName(name) {
     try {
-        if (name.indexOf('.') > -1) {
+        if (name.includes('.')) {
             // E.g. ng.core would cause errors otherwise:
             name = name.split('.').join('_');
         }
 
         // eslint-disable-next-line no-eval
-        return name.indexOf('}') === -1 && eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true');
+        return !name.includes('}') && eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true');
     } catch (error) {
+        console.error(error);
         return false;
     }
 }
