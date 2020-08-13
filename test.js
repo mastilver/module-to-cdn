@@ -115,6 +115,7 @@ function getRangeEdgeVersions(allVersions) {
     return function (range) {
         const result = [];
         const values = allVersions.filter(version => semver.satisfies(version, range));
+
         if (values.length > 0) {
             result.push(values[0]);
         }
