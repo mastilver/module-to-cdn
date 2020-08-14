@@ -7,7 +7,7 @@ const modules = require('./modules');
 const fn = require('.');
 
 const moduleNames = Object.keys(modules);
-axiosRetry(axios, { retries: 3 });
+axiosRetry(axios, {retries: 3});
 
 test('basic', t => {
     t.deepEqual(fn('react', '15.0.0', {env: 'development'}), {
@@ -33,12 +33,13 @@ test('out of range module', t => {
 
 function limit(m) {
     if (process.env.LIMIT) {
-        return process.env.LIMIT.indexOf(`;${m};`) !== -1;
+        return process.env.LIMIT.includes(`;${m};`);
     }
+
     return true;
 }
 
-for (const moduleName of moduleNames.filter(limit)) {
+for (const moduleName of moduleNames.filter(m => limit(m))) {
     const versionRanges = Object.keys(modules[moduleName].versions);
 
     test.serial(`prod: ${moduleName}@next`, testNextModule, moduleName, 'production');
@@ -90,7 +91,7 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     await t.notThrowsAsync(async () => {
         let data;
         try {
-            const response = await axios.get(cdnConfig.url);
+            const response = await axios.get(cdnConfig.url, {timeout: 2000});
             data = response.data;
         } catch (error) {
             console.error(cdnConfig.url, error.message);
