@@ -479,5 +479,85 @@
         "production": "https://unpkg.com/history@[version]/umd/history.production.min.js"
       }
     }
+  },
+  "d3": {
+    "var": "d3",
+    "versions": {
+      ">= 4.0.0 < 5.0.0": {
+        "development": "https://unpkg.com/d3@[version]/build/d3.js",
+        "production": "https://unpkg.com/d3@[version]/build/d3.min.js"
+      },
+      ">= 5.0.0": {
+        "development": "https://unpkg.com/d3@[version]/dist/d3.js",
+        "production": "https://unpkg.com/d3@[version]/dist/d3.min.js"
+      }
+    }
+  },
+  "bootstrap": {
+    "var": null,
+    "versions": {
+      ">= 3.1.1": {
+        "development": "https://unpkg.com/bootstrap@[version]/dist/js/bootstrap.js",
+        "production": "https://unpkg.com/bootstrap@[version]/dist/js/bootstrap.min.js"
+      }
+    }
+  },
+  "popper.js": {
+    "var": "Popper",
+    "versions": {
+      ">= 1.9.0 < 2.0.0": {
+        "development": "https://unpkg.com/popper.js@[version]/dist/umd/popper.js",
+        "production": "https://unpkg.com/popper.js@[version]/dist/umd/popper.min.js"
+      }
+    }
+  },
+  "tooltip.js": {
+    "var": "Tooltip",
+    "versions": {
+      ">= 1.1.2 < 2.0.0": {
+        "development": "https://unpkg.com/tooltip.js@[version]/dist/umd/tooltip.js",
+        "production": "https://unpkg.com/tooltip.js@[version]/dist/umd/tooltip.min.js"
+      }
+    }
+  },
+  "aframe": {
+    "var": "AFRAME",
+    "versions": {
+      ">= 0.9.0": {
+        "development": "https://unpkg.com/aframe@[version]/dist/aframe-master.js",
+        "production": "https://unpkg.com/aframe@[version]/dist/aframe-master.min.js"
+      }
+    }
+  },
+  "ag-grid": {
+    "var": "agGrid",
+    "versions": {
+      ">= 4.0.0 <= 18.1.2": {
+        "development": "https://unpkg.com/ag-grid@[version]/dist/ag-grid.js",
+        "production": "https://unpkg.com/ag-grid@[version]/dist/ag-grid.min.js"
+      }
+    }
+  },
+  "ag-grid-community": {
+    "var": "agGrid",
+    "versions": {
+      ">= 18.1.2 < 19.0.0": {
+        "development": "https://unpkg.com/ag-grid-community@[version]/dist/ag-grid.js",
+        "production": "https://unpkg.com/ag-grid-community@[version]/dist/ag-grid.min.js"
+      },
+      ">= 19.0.0": {
+        "development": "https://unpkg.com/ag-grid-community@[version]/dist/ag-grid-community.js",
+        "production": "https://unpkg.com/ag-grid-community@[version]/dist/ag-grid-community.min.js"
+      }
+    }
+  },
+  "ag-grid-enterprise": {
+    "var": "agGrid",
+    "versions": {
+      ">= 17.1.1": {
+        "development": "https://unpkg.com/ag-grid-enterprise@[version]/dist/ag-grid-enterprise.js",
+        "production": "https://unpkg.com/ag-grid-enterprise@[version]/dist/ag-grid-enterprise.min.js"
+      }
+    }
   }
 }
