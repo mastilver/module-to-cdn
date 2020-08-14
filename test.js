@@ -91,7 +91,7 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     await t.notThrowsAsync(async () => {
         let data;
         try {
-            const response = await axios.get(cdnConfig.url, {timeout: 2000});
+            const response = await axios.get(cdnConfig.url);
             data = response.data;
         } catch (error) {
             console.error(cdnConfig.url, error.message);
