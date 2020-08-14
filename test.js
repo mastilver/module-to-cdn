@@ -30,7 +30,14 @@ test('out of range module', t => {
     t.is(fn('react', '0.10.0'), null);
 });
 
-for (const moduleName of moduleNames) {
+function limit(m) {
+    if (process.env.LIMIT) {
+        return process.env.LIMIT.indexOf(`;${m};`) !== -1;
+    }
+    return true;
+}
+
+for (const moduleName of moduleNames.filter(limit)) {
     const versionRanges = Object.keys(modules[moduleName].versions);
 
     test.serial(`prod: ${moduleName}@next`, testNextModule, moduleName, 'production');
