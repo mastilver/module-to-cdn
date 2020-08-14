@@ -2,11 +2,12 @@ const test = require('ava');
 const axios = require('axios');
 const execa = require('execa');
 const semver = require('semver');
-
+const axiosRetry = require('axios-retry');
 const modules = require('./modules');
 const fn = require('.');
 
 const moduleNames = Object.keys(modules);
+axiosRetry(axios, { retries: 3 });
 
 test('basic', t => {
     t.deepEqual(fn('react', '15.0.0', {env: 'development'}), {
