@@ -3,8 +3,18 @@ const axios = require('axios');
 const execa = require('execa');
 const semver = require('semver');
 const axiosRetry = require('axios-retry');
+const fs = require('fs');
 const modules = require('./modules');
 const fn = require('.');
+
+const CACHE_NPM_PATH = '.npm-cache-info.json';
+const CACHE_NPM = {};
+
+if (fs.existsSync(CACHE_NPM_PATH)) {
+    Object.assign(CACHE_NPM, require(`./${CACHE_NPM_PATH}`));
+} else {
+    CACHE_NPM.__last = 0;
+}
 
 const moduleNames = Object.keys(modules);
 axiosRetry(axios, {retries: 3});
@@ -54,6 +64,11 @@ for (const moduleName of moduleNames.filter(m => limit(m))) {
     });
 }
 
+if (Date.now() - CACHE_NPM.__last > 1000*60*60) {
+    CACHE_NPM.__last = Date.now();
+    fs.writeFileSync(CACHE_NPM_PATH, JSON.stringify(CACHE_NPM));
+}
+
 async function testModule(t, moduleName, version, env) {
     const cdnConfig = fn(moduleName, version, {env});
 
@@ -93,10 +108,8 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
         try {
             const response = await axios.get(cdnConfig.url);
             data = response.data;
-        } catch (error) {
-            console.error(cdnConfig.url, error.message);
-            t.true(false);
-            return;
+        } catch(e) {
+            throw new Error(e.message);
         }
 
         if (cdnConfig.var) {
@@ -113,7 +126,14 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
 }
 
 function getModuleInfo(moduleName) {
-    return JSON.parse(execa.sync('npm', ['info', '--json', `${moduleName}`]).stdout);
+    if (!CACHE_NPM[moduleName]) {
+        let info = JSON.parse(execa.sync('npm', ['info', '--json', `${moduleName}`]).stdout);
+        CACHE_NPM[moduleName] = {
+            'dist-tags': info['dist-tags'],
+            versions: info.versions
+        };
+    }
+    return CACHE_NPM[moduleName];
 }
 
 function getAllVersions(moduleName) {
