@@ -64,7 +64,7 @@ for (const moduleName of moduleNames.filter(m => limit(m))) {
     });
 }
 
-if (Date.now() - CACHE_NPM.__last > 1000*60*60) {
+if (Date.now() - CACHE_NPM.__last > 1000 * 60 * 60) {
     CACHE_NPM.__last = Date.now();
     fs.writeFileSync(CACHE_NPM_PATH, JSON.stringify(CACHE_NPM));
 }
@@ -108,8 +108,8 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
         try {
             const response = await axios.get(cdnConfig.url);
             data = response.data;
-        } catch(e) {
-            throw new Error(e.message);
+        } catch (error) {
+            throw new Error(error.message);
         }
 
         if (cdnConfig.var) {
@@ -127,12 +127,13 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
 
 function getModuleInfo(moduleName) {
     if (!CACHE_NPM[moduleName]) {
-        let info = JSON.parse(execa.sync('npm', ['info', '--json', `${moduleName}`]).stdout);
+        const info = JSON.parse(execa.sync('npm', ['info', '--json', `${moduleName}`]).stdout);
         CACHE_NPM[moduleName] = {
             'dist-tags': info['dist-tags'],
             versions: info.versions
         };
     }
+
     return CACHE_NPM[moduleName];
 }
 
