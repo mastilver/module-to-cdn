@@ -9,15 +9,33 @@ const fn = require('.');
 
 const CACHE_NPM_PATH = '.npm-cache-info.json';
 const CACHE_NPM = {};
-
 if (fs.existsSync(CACHE_NPM_PATH)) {
     Object.assign(CACHE_NPM, require(`./${CACHE_NPM_PATH}`));
 } else {
     CACHE_NPM.__last = 0;
 }
 
+const AXIOS_CACHE_PATH = '.axios-cache/index.json';
+const AXIOS_CACHE = {};
+if (fs.existsSync(AXIOS_CACHE_PATH)) {
+    Object.assign(AXIOS_CACHE, require(`./${AXIOS_CACHE_PATH}`));
+}
+
+
 const moduleNames = Object.keys(modules);
 axiosRetry(axios, {retries: 3});
+
+function cachedGet(url) {
+    if (AXIOS_CACHE[url]) {
+        return Promise.resolve({data: fs.readFileSync(AXIOS_CACHE[url]).toString()});
+    }
+    return axios.get(url).then((response) => {
+        AXIOS_CACHE[url] = `./.axios-cache/cache-${Math.random().toFixed(10)}.js`;
+        fs.writeFileSync(AXIOS_CACHE[url], response.data);
+        fs.writeFileSync(AXIOS_CACHE_PATH, JSON.stringify(AXIOS_CACHE, null, 2));
+        return response;
+    });
+}
 
 test('basic', t => {
     t.deepEqual(fn('react', '15.0.0', {env: 'development'}), {
@@ -106,7 +124,7 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     await t.notThrowsAsync(async () => {
         let data;
         try {
-            const response = await axios.get(cdnConfig.url);
+            const response = await cachedGet(cdnConfig.url);
             data = response.data;
         } catch (error) {
             throw new Error(error.message);
