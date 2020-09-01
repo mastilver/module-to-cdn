@@ -21,7 +21,6 @@ if (fs.existsSync(AXIOS_CACHE_PATH)) {
     Object.assign(AXIOS_CACHE, require(`./${AXIOS_CACHE_PATH}`));
 }
 
-
 const moduleNames = Object.keys(modules);
 axiosRetry(axios, {retries: 3});
 
@@ -29,7 +28,8 @@ function cachedGet(url) {
     if (AXIOS_CACHE[url]) {
         return Promise.resolve({data: fs.readFileSync(AXIOS_CACHE[url]).toString()});
     }
-    return axios.get(url).then((response) => {
+
+    return axios.get(url).then(response => {
         AXIOS_CACHE[url] = `./.axios-cache/cache-${Math.random().toFixed(10)}.js`;
         fs.writeFileSync(AXIOS_CACHE[url], response.data);
         fs.writeFileSync(AXIOS_CACHE_PATH, JSON.stringify(AXIOS_CACHE, null, 2));
