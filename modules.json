@@ -257,12 +257,12 @@
       }
     }
   },
-  "hoist-non-react-statics": {
-    "var": "hoistNonReactStatics",
+  "i18next": {
+    "var": "i18next",
     "versions": {
-      ">= 2.5.1": {
-        "development": "/dist/hoist-non-react-statics.js",
-        "production": "/dist/hoist-non-react-statics.min.js"
+      ">= 3.0.0": {
+        "development": "/dist/umd/i18next.js",
+        "production": "/dist/umd/i18next.min.js"
       }
     }
   },
@@ -374,6 +374,29 @@
       ">= 16.0.0": {
         "development": "/umd/react-dom.development.js",
         "production": "/umd/react-dom.production.min.js"
+      }
+    }
+  },
+  "react-is": {
+    "var": "ReactIs",
+    "versions": {
+      ">= 16.0.0": {
+        "development": "/umd/react-is.development.js",
+        "production": "/umd/react-is.production.min.js"
+      }
+    }
+  },
+  "react-i18next": {
+    "versions": {
+      ">= 2.0.0 < 8.0.0": {
+        "var": "reactI18next",
+        "development": "/dist/umd/react-i18next.js",
+        "production": "/dist/umd/react-i18next.min.js"
+      },
+      ">= 9.0.0 <": {
+        "var": "ReactI18next",
+        "development": "/dist/umd/react-i18next.js",
+        "production": "/dist/umd/react-i18next.min.js"
       }
     }
   },
@@ -504,6 +527,15 @@
       ">= 1.1.2": {
         "development": "/dist/semantic.js",
         "production": "/dist/semantic.min.js"
+      }
+    }
+  },
+  "styled-components":{
+    "var": "styled",
+    "versions": {
+      ">= 2.0.0": {
+        "development": "/dist/styled-components.js",
+        "production": "/dist/styled-components.min.js"
       }
     }
   },
