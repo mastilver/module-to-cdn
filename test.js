@@ -19,6 +19,9 @@ const AXIOS_CACHE_PATH = '.axios-cache/index.json';
 const AXIOS_CACHE = {};
 if (fs.existsSync(AXIOS_CACHE_PATH)) {
     Object.assign(AXIOS_CACHE, require(`./${AXIOS_CACHE_PATH}`));
+} else {
+    fs.mkdirSync('.axios-cache');
+    fs.writeFileSync(AXIOS_CACHE_PATH, '{}');
 }
 
 const moduleNames = Object.keys(modules);
@@ -138,7 +141,7 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
                 content.includes(`.${cdnConfig.var}=`) ||
                 content.includes(`["${cdnConfig.var}"]=`) ||
                 content.includes(`['${cdnConfig.var}']=`) ||
-                // the case of immutable 3 is clear, the script is global and just do Immutable =
+                // Immutable 3 is clear, the script is global and just do Immutable =
                 content.includes(`${cdnConfig.var}=`)
             );
         }
