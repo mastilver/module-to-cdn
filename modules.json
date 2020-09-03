@@ -364,6 +364,15 @@
       }
     }
   },
+  "react-bootstrap": {
+    "var": "ReactBootstrap",
+    "versions": {
+      ">= 0.20.0": {
+        "development": "/dist/react-bootstrap.js",
+        "production": "/dist/react-bootstrap.min.js"
+      }
+    }
+  },
   "react-dom": {
     "var": "ReactDOM",
     "versions": {
