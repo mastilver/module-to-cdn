@@ -137,7 +137,9 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
             t.true(
                 content.includes(`.${cdnConfig.var}=`) ||
                 content.includes(`["${cdnConfig.var}"]=`) ||
-                content.includes(`['${cdnConfig.var}']=`)
+                content.includes(`['${cdnConfig.var}']=`) ||
+                // the case of immutable 3 is clear, the script is global and just do Immutable =
+                content.includes(`${cdnConfig.var}=`)
             );
         }
     }, cdnConfig.url);

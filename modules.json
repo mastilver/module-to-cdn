@@ -257,6 +257,15 @@
       }
     }
   },
+  "immutable": {
+    "var": "Immutable",
+    "versions": {
+      ">= 3.0.0": {
+        "development": "/dist/immutable.js",
+        "production": "/dist/immutable.min.js"
+      }
+    }
+  },
   "i18next": {
     "var": "i18next",
     "versions": {
