@@ -306,8 +306,8 @@
     "var": "_",
     "versions": {
       ">= 4.5.1": {
-        "development": "/core.js",
-        "production": "/core.min.js"
+        "development": "/lodash.js",
+        "production": "/lodash.min.js"
       }
     }
   },
