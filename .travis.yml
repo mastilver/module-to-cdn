@@ -4,5 +4,5 @@ node_js:
   - '12'
 cache:
   directories:
-    - .axios-cache
+    - .test-cache
     - node_modules
