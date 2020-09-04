@@ -1,8 +1,11 @@
 const axios = require('axios');
 const axiosRetry = require('axios-retry');
 const fs = require('fs');
+const path = require('path');
+
 const execa = require('execa');
 const semver = require('semver');
+const mkdirp = require('mkdirp');
 
 const CACHE_BASE_PATH = '.test-cache';
 if (!fs.existsSync(CACHE_BASE_PATH)) {
@@ -25,16 +28,7 @@ if (fs.existsSync(CACHE_NPM_PATH)) {
     }
 }
 
-const AXIOS_CACHE_INDEX_PATH = `${CACHE_BASE_PATH}/axios.json`;
 const AXIOS_CACHE_PATH = `${CACHE_BASE_PATH}/axios`;
-const AXIOS_CACHE = {};
-
-if (fs.existsSync(AXIOS_CACHE_INDEX_PATH)) {
-    Object.assign(AXIOS_CACHE, require(`./${AXIOS_CACHE_INDEX_PATH}`));
-} else {
-    console.log(`Setup cache index for axios request in ${AXIOS_CACHE_INDEX_PATH}`);
-    fs.writeFileSync(AXIOS_CACHE_INDEX_PATH, '{}');
-}
 
 if (!fs.existsSync(AXIOS_CACHE_PATH)) {
     console.log(`Setup cache folder for axios request in ${AXIOS_CACHE_PATH}`);
@@ -43,17 +37,46 @@ if (!fs.existsSync(AXIOS_CACHE_PATH)) {
 
 axiosRetry(axios, {retries: 3});
 
+function getInfo(url) {
+    const info = {};
+    const splitted = url.replace('https://unpkg.com/', '').split('/');
+    const [packageAndVersion, inCase, ...path] = splitted;
+
+    if (packageAndVersion.startsWith('@')) {
+        const [n, version] = inCase.split('@');
+        info.name = `${packageAndVersion}/${n}`;
+        info.version = version;
+        info.path = path.join('/');
+    } else {
+        const [n, version] = packageAndVersion.split('@');
+        info.name = n;
+        info.version = version;
+        info.path = [inCase].concat(path).join('/');
+    }
+
+    return info;
+}
+
+function getPathFromURL(url) {
+    const info = getInfo(url);
+    return `./${AXIOS_CACHE_PATH}/${info.name}/${info.version}/${info.path}`;
+}
+
 function cachedGet(url) {
-    if (AXIOS_CACHE[url]) {
-        return Promise.resolve({data: fs.readFileSync(AXIOS_CACHE[url]).toString()});
+    const pathFromURL = getPathFromURL(url);
+    if (fs.existsSync(pathFromURL)) {
+        return Promise.resolve({data: fs.readFileSync(pathFromURL).toString()});
     }
 
     return axios.get(url).then(response => {
-        AXIOS_CACHE[url] = `./${AXIOS_CACHE_PATH}/cache-${Math.random().toFixed(10)}.js`;
-        fs.writeFileSync(AXIOS_CACHE[url], response.data);
-        fs.writeFileSync(AXIOS_CACHE_INDEX_PATH, JSON.stringify(AXIOS_CACHE, null, 2));
+        mkdirp.sync(path.dirname(pathFromURL));
+        fs.writeFileSync(pathFromURL, response.data);
         return response;
     });
+}
+
+function isInCache(url) {
+    return fs.existsSync(getPathFromURL(url));
 }
 
 function getModuleInfo(moduleName) {
@@ -92,7 +115,9 @@ function getRangeEdgeVersions(allVersions) {
 
 module.exports = {
     cachedGet,
+    isInCache,
     getModuleInfo,
     getAllVersions,
-    getRangeEdgeVersions
+    getRangeEdgeVersions,
+    getPathFromURL
 };
