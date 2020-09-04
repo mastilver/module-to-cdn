@@ -24,6 +24,7 @@ if (fs.existsSync(AXIOS_CACHE_PATH)) {
     if (!fs.existsSync(AXIOS_CACHE_BASE_PATH)) {
         fs.mkdirSync(AXIOS_CACHE_BASE_PATH);
     }
+
     fs.writeFileSync(AXIOS_CACHE_PATH, '{}');
 }
 
