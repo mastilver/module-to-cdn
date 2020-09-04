@@ -13,7 +13,7 @@
     "node": ">=6"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava -v"
   },
   "files": [
     "index.js",
@@ -23,13 +23,15 @@
     ""
   ],
   "dependencies": {
-    "semver": "^6.0.0"
+    "semver": "^6.3.0"
   },
   "devDependencies": {
-    "ava": "^1.4.1",
+    "ava": "^3.1.1",
     "axios": "^0.18.0",
+    "axios-retry": "^3.1.8",
     "execa": "^1.0.0",
-    "xo": "^0.24.0"
+    "mkdirp": "^1.0.4",
+    "xo": "^0.33.0"
   },
   "xo": {
     "esnext": true,
@@ -40,7 +42,9 @@
     "rules": {
       "ava/no-ignored-test-files": "off",
       "eqeqeq": "off",
-      "no-eq-null": "off"
+      "no-eq-null": "off",
+      "node/no-unsupported-features/es-syntax": "off",
+      "unicorn/no-reduce": "off"
     }
   }
 }

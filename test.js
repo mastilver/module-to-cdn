@@ -1,10 +1,9 @@
-import test from 'ava';
-import axios from 'axios';
-import execa from 'execa';
-import semver from 'semver';
+const test = require('ava');
+const semver = require('semver');
+const modules = require('./modules');
 
-import modules from './modules';
-import fn from '.';
+const fn = require('.');
+const {cachedGet, getModuleInfo, getAllVersions, getRangeEdgeVersions} = require('./cache');
 
 const moduleNames = Object.keys(modules);
 
@@ -30,7 +29,15 @@ test('out of range module', t => {
     t.is(fn('react', '0.10.0'), null);
 });
 
-for (const moduleName of moduleNames) {
+function limit(m) {
+    if (process.env.LIMIT) {
+        return process.env.LIMIT.includes(`;${m};`);
+    }
+
+    return true;
+}
+
+for (const moduleName of moduleNames.filter(m => limit(m))) {
     const versionRanges = Object.keys(modules[moduleName].versions);
 
     test.serial(`prod: ${moduleName}@next`, testNextModule, moduleName, 'production');
@@ -38,10 +45,22 @@ for (const moduleName of moduleNames) {
 
     const allVersions = getAllVersions(moduleName);
     const testVersions = [].concat(...versionRanges.map(getRangeEdgeVersions(allVersions)));
-
+    console.log(moduleName, testVersions);
     testVersions.forEach(version => {
-        test.serial(`prod: ${moduleName}@${version}`, testModule, moduleName, version, 'production');
-        test.serial(`dev: ${moduleName}@${version}`, testModule, moduleName, version, 'development');
+        test.serial(
+            `prod: ${moduleName}@${version}`,
+            testModule,
+            moduleName,
+            version,
+            'production'
+        );
+        test.serial(
+            `dev: ${moduleName}@${version}`,
+            testModule,
+            moduleName,
+            version,
+            'development'
+        );
     });
 }
 
@@ -63,6 +82,10 @@ async function testNextModule(t, moduleName, env) {
 
     const cdnConfig = fn(moduleName, futureVersion, {env});
 
+    if (!cdnConfig) {
+        return t.pass(`no next support for ${moduleName}`);
+    }
+
     cdnConfig.url = cdnConfig.url.replace(futureVersion, nextVersion);
 
     await testCdnConfig(t, cdnConfig, moduleName, nextVersion);
@@ -76,55 +99,44 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
     t.true(cdnConfig.url.includes(version));
 
     await t.notThrowsAsync(async () => {
-        const {data} = await axios.get(cdnConfig.url);
-        if (cdnConfig.var != null) {
+        let data;
+        try {
+            const response = await cachedGet(cdnConfig.url);
+            data = response.data;
+        } catch (error) {
+            throw new Error(error.message);
+        }
+
+        if (cdnConfig.var) {
             t.true(isValidVarName(cdnConfig.var));
 
             const content = data.replace(/ /g, '');
             t.true(
                 content.includes(`.${cdnConfig.var}=`) ||
-                content.includes(`["${cdnConfig.var}"]=`) ||
-                content.includes(`['${cdnConfig.var}']=`),
+                    content.includes(`["${cdnConfig.var}"]=`) ||
+                    content.includes(`['${cdnConfig.var}']=`) ||
+                    // Immutable 3 is clear, the script is global and just do Immutable =
+                    content.includes(`${cdnConfig.var}=`)
             );
         }
     }, cdnConfig.url);
 }
 
-function getModuleInfo(moduleName) {
-    return JSON.parse(execa.sync('npm', ['info', '--json', `${moduleName}`]).stdout);
-}
-
-function getAllVersions(moduleName) {
-    return getModuleInfo(moduleName).versions;
-}
-
-function getRangeEdgeVersions(allVersions) {
-    return function (range) {
-        const result = [];
-        const values = allVersions.filter(version => semver.satisfies(version, range));
-        if (values.length > 0) {
-            result.push(values[0]);
-        }
-
-        if (values.length > 1) {
-            result.push(values[values.length - 1]);
-        }
-
-        return result;
-    };
-}
-
 // https://stackoverflow.com/a/31625466/3052444
 function isValidVarName(name) {
     try {
-        if (name.indexOf('.') > -1) {
+        if (name.includes('.')) {
             // E.g. ng.core would cause errors otherwise:
             name = name.split('.').join('_');
         }
 
-        // eslint-disable-next-line no-eval
-        return name.indexOf('}') === -1 && eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true');
+        return (
+            !name.includes('}') &&
+            // eslint-disable-next-line no-eval
+            eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true')
+        );
     } catch (error) {
+        console.error(error);
         return false;
     }
 }

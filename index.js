@@ -3,6 +3,7 @@
 const semver = require('semver');
 
 const modules = require('./modules');
+const {getURL} = require('./url');
 
 module.exports = function (moduleName, version, options) {
     options = options || {};
@@ -29,12 +30,21 @@ module.exports = function (moduleName, version, options) {
         return null;
     }
 
-    let url = env === 'development' ? config.development : config.production;
-    url = url.replace('[version]', version);
+    const path = env === 'development' ? config.development : config.production;
+    let url;
+    if (path.startsWith('/')) {
+        url = getURL({
+            name: moduleName,
+            version,
+            path
+        });
+    } else {
+        url = path.replace('[version]', version);
+    }
 
     return {
         name: moduleName,
-        var: modules[moduleName].var,
+        var: modules[moduleName].var || modules[moduleName].versions[range].var,
         url,
         version
     };

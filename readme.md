@@ -60,6 +60,16 @@ Default: `development`
 * `version`: the version asked for
 
 
+## Tests
+
+This module do integration tests so it requests npm / unpkg for every packages on the limit of each version and also it tries to fetch the @next version to be as future proof as possible
+
+So if you want to focus on a given module you can use the LIMIT env variable
+
+```
+LIMIT=";ag-grid;ag-grid-community;ag-grid-enterprise;" ava
+```
+
 ## License
 
 MIT © [Thomas Sileghem](http://mastilver.com)
