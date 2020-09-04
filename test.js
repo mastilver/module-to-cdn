@@ -15,12 +15,15 @@ if (fs.existsSync(CACHE_NPM_PATH)) {
     CACHE_NPM.__last = 0;
 }
 
-const AXIOS_CACHE_PATH = '.axios-cache/index.json';
+const AXIOS_CACHE_BASE_PATH = '.axios-cache';
+const AXIOS_CACHE_PATH = `${AXIOS_CACHE_BASE_PATH}/index.json`;
 const AXIOS_CACHE = {};
 if (fs.existsSync(AXIOS_CACHE_PATH)) {
     Object.assign(AXIOS_CACHE, require(`./${AXIOS_CACHE_PATH}`));
 } else {
-    fs.mkdirSync('.axios-cache');
+    if (!fs.existsSync(AXIOS_CACHE_BASE_PATH)) {
+        fs.mkdirSync(AXIOS_CACHE_BASE_PATH);
+    }
     fs.writeFileSync(AXIOS_CACHE_PATH, '{}');
 }
 
