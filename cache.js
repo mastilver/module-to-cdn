@@ -62,17 +62,24 @@ function getPathFromURL(url) {
     return `./${AXIOS_CACHE_PATH}/${info.name}/${info.version}/${info.path}`;
 }
 
-function cachedGet(url) {
+async function cachedGet(url) {
     const pathFromURL = getPathFromURL(url);
     if (fs.existsSync(pathFromURL)) {
-        return Promise.resolve({data: fs.readFileSync(pathFromURL).toString()});
+            return Promise.resolve({data: fs.readFileSync(pathFromURL).toString()});
     }
 
-    return axios.get(url).then(response => {
+    try {
+        const response = await axios.get(url);
+        if (process.env.DEBUG) {
+            console.debug('downloaded', url);
+        }
+
         mkdirp.sync(path.dirname(pathFromURL));
         fs.writeFileSync(pathFromURL, response.data);
         return response;
-    });
+    } catch (error) {
+        console.error('DownloadError', url, error.message);
+    }
 }
 
 function isInCache(url) {
