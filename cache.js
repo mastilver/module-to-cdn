@@ -65,7 +65,7 @@ function getPathFromURL(url) {
 async function cachedGet(url) {
     const pathFromURL = getPathFromURL(url);
     if (fs.existsSync(pathFromURL)) {
-            return Promise.resolve({data: fs.readFileSync(pathFromURL).toString()});
+        return Promise.resolve({data: fs.readFileSync(pathFromURL).toString()});
     }
 
     try {
