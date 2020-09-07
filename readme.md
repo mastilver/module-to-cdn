@@ -110,6 +110,13 @@ So if you want to focus on a given module you can use the LIMIT env variable
 LIMIT=";ag-grid;ag-grid-community;ag-grid-enterprise;" ava -v
 ```
 
+## Excluded modules
+
+
+* hoist-non-react-statics: the umd build contains JS errors (process.env.NODE and require) on every versions.
+
+
+
 ## License
 
 MIT © [Thomas Sileghem](http://mastilver.com)
