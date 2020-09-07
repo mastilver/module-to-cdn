@@ -3,9 +3,9 @@
 const semver = require('semver');
 
 const modules = require('./modules');
-const {getURL} = require('./url');
+const {getURL, setURL} = require('./url');
 
-module.exports = function (moduleName, version, options) {
+function main(moduleName, version, options) {
     options = options || {};
     const env = options.env || 'development';
 
@@ -48,4 +48,9 @@ module.exports = function (moduleName, version, options) {
         url,
         version
     };
-};
+}
+
+main.configure = setURL;
+main.unpkg = getURL;
+module.exports = main;
+
