@@ -1,9 +1,9 @@
 {
   "name": "@talend/module-to-cdn",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Get cdn config from npm module name",
   "license": "MIT",
-  "repository": "jmfrancois/module-to-cdn",
+  "repository": "toutpt/module-to-cdn",
   "author": {
     "name": "Thomas Sileghem",
     "email": "th.sileghem@gmail.com",
@@ -27,12 +27,15 @@
     "semver": "^6.3.0"
   },
   "devDependencies": {
-    "ava": "^3.1.1",
-    "axios": "^0.18.0",
+    "ava": "^3.12.1",
+    "axios": "^0.20.0",
     "axios-retry": "^3.1.8",
-    "execa": "^1.0.0",
+    "execa": "^4.0.0",
     "mkdirp": "^1.0.4",
     "xo": "^0.33.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "xo": {
     "esnext": true,
