@@ -44,7 +44,8 @@ moduleToCdn('react', '15.3.0');
     var: 'React',
     url: 'https://unpkg.com/react@15.3.0/dist/react.min.js',
     version: '15.3.0',
-    path: '/dist/react.min.js'
+    path: '/dist/react.min.js',
+    local: '/Users/me/module-to-cdn/node_modules/react/dist/react.min.js'
 }
 */
 ```
@@ -82,7 +83,8 @@ Default: `development`
 * `var`: name of the global variable exposing the module
 * `url`: url where the module is available
 * `version`: the version asked for
-
+* `path`: relative path of the umd file in the distributed package
+* `local`: absolute path on the current system to the file
 
 ## Configuration of the resolver
 

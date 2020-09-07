@@ -1,7 +1,7 @@
 'use strict';
 
 const semver = require('semver');
-
+const pathModule = require('path');
 const modules = require('./modules');
 const {getURL, setURL} = require('./url');
 
@@ -32,12 +32,19 @@ function main(moduleName, version, options) {
 
     let path = env === 'development' ? config.development : config.production;
     let url;
+    let root;
     if (path.startsWith('/')) {
         url = getURL({
             name: moduleName,
             version,
             path
         });
+        try {
+            const mainPath = require.resolve(moduleName);
+            const splited = mainPath.split('node_modules');
+            splited.pop();
+            root = pathModule.join(splited.join('node_modules'), 'node_modules', moduleName, path);
+        } catch {}
     } else {
         url = path.replace('[version]', version);
         path = undefined;
@@ -48,7 +55,8 @@ function main(moduleName, version, options) {
         var: modules[moduleName].var || modules[moduleName].versions[range].var,
         url,
         version,
-        path
+        path,
+        local: root
     };
 }
 

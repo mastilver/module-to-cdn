@@ -1,7 +1,7 @@
 const test = require('ava');
 const semver = require('semver');
+const pathModule = require('path');
 const modules = require('./modules');
-
 const fn = require('.');
 const {cachedGet, getModuleInfo, getAllVersions, getRangeEdgeVersions} = require('./cache');
 
@@ -13,7 +13,8 @@ test('basic', t => {
         var: 'React',
         url: 'https://unpkg.com/react@15.0.0/dist/react.js',
         version: '15.0.0',
-        path: '/dist/react.js'
+        path: '/dist/react.js',
+        local: pathModule.join(__dirname, 'node_modules', 'react', '/dist/react.js')
     });
 });
 
@@ -28,6 +29,17 @@ test('default to development', t => {
 
 test('out of range module', t => {
     t.is(fn('react', '0.10.0'), null);
+});
+
+test('module not installed', t => {
+    t.deepEqual(fn('react-dom', '15.0.0', {env: 'development'}), {
+        name: 'react-dom',
+        var: 'ReactDOM',
+        url: 'https://unpkg.com/react-dom@15.0.0/dist/react-dom.js',
+        version: '15.0.0',
+        path: '/dist/react-dom.js',
+        local: undefined
+    });
 });
 
 function limit(m) {
