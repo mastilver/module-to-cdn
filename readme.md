@@ -43,7 +43,8 @@ moduleToCdn('react', '15.3.0');
     name: 'react',
     var: 'React',
     url: 'https://unpkg.com/react@15.3.0/dist/react.min.js',
-    version: '15.3.0'
+    version: '15.3.0',
+    path: '/dist/react.min.js'
 }
 */
 ```

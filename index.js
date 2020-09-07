@@ -30,7 +30,7 @@ function main(moduleName, version, options) {
         return null;
     }
 
-    const path = env === 'development' ? config.development : config.production;
+    let path = env === 'development' ? config.development : config.production;
     let url;
     if (path.startsWith('/')) {
         url = getURL({
@@ -40,13 +40,15 @@ function main(moduleName, version, options) {
         });
     } else {
         url = path.replace('[version]', version);
+        path = undefined;
     }
 
     return {
         name: moduleName,
         var: modules[moduleName].var || modules[moduleName].versions[range].var,
         url,
-        version
+        version,
+        path
     };
 }
 

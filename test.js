@@ -12,7 +12,8 @@ test('basic', t => {
         name: 'react',
         var: 'React',
         url: 'https://unpkg.com/react@15.0.0/dist/react.js',
-        version: '15.0.0'
+        version: '15.0.0',
+        path: '/dist/react.js'
     });
 });
 
