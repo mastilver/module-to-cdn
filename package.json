@@ -1,6 +1,6 @@
 {
   "name": "@talend/module-to-cdn",
-  "version": "3.2.1",
+  "version": "3.3.0",
   "description": "Get cdn config from npm module name",
   "license": "MIT",
   "repository": "toutpt/module-to-cdn",
