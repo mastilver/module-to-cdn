@@ -94,14 +94,40 @@ You can change that using the following API.
 ```javascript
 import moduleToCdn from '@talend/module-to-cdn';
 
-function myResolver(info) {
-    if (process.env.NODE_ENV === 'development') {
-        return moduleToCdn.unpkg(info);
+function myResolver(...args) {
+    const info = moduleToCdn(...args);
+    if (process.env.NODE_ENV !== 'development') {
+        return {
+            ...info,
+            url: `https://cdn.talend.com/${info.name}/${info.version}${info.path}`
+        };
     }
-    return `https://cdn.talend.com/${info.name}/${info.version}${info.path}`;
+    return info;
 }
 moduleToCdn.configure(myResolver);
 ```
+
+## Support private CDN
+
+The module.json file is an open effort on existing opensource libs. If you want to support custom internal library you can add entries in this file using the following API:
+
+```javascript
+import moduleToCdn from '@talend/module-to-cdn';
+
+moduleToCdn.add({
+    '@talend/my-private-module': {
+        var: 'TalendMyPrivateModule',
+        versions: {
+            '>= 0.0.0' : {
+                'development': '/dist/build.js',
+                'production': '/dist/build.min.js',
+            }
+        }
+    }
+});
+```
+
+This will affect all future call to moduleToCdn;
 
 ## Tests
 

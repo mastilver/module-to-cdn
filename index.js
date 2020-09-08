@@ -2,8 +2,34 @@
 
 const semver = require('semver');
 const pathModule = require('path');
-const modules = require('./modules');
 const {getURL, setURL} = require('./url');
+
+const modules = {...require('./modules')};
+
+/**
+ * Add new entries in the modules.
+ * obj must be of the following shape:
+ * {
+ *   'moduleName': {
+ *     'var': 'ModuleNameGlobalVar',
+ *     'versions' : {
+ *       '>= 0.0.0': {
+ *         'development: '/dist/module.js',
+ *         'production': '/dist/module.min.js'
+ *       }
+ *     }
+ *   }
+ * }
+ */
+function add(config) {
+    if (typeof config !== 'object' || config === null || Array.isArray(config)) {
+        throw new Error('ValueError: not an object', config);
+    }
+
+    Object.keys(config).forEach(key => {
+        modules[key] = config[key];
+    });
+}
 
 function main(moduleName, version, options) {
     options = options || {};
@@ -18,6 +44,7 @@ function main(moduleName, version, options) {
     }
 
     const isModuleAvailable = moduleName in modules;
+
     if (!isModuleAvailable) {
         return null;
     }
@@ -62,5 +89,5 @@ function main(moduleName, version, options) {
 
 main.configure = setURL;
 main.unpkg = getURL;
+main.add = add;
 module.exports = main;
-
