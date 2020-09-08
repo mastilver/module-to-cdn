@@ -411,7 +411,7 @@
         "development": "/dist/umd/react-i18next.js",
         "production": "/dist/umd/react-i18next.min.js"
       },
-      ">= 9.0.0 <": {
+      ">= 9.0.0": {
         "var": "ReactI18next",
         "development": "/dist/umd/react-i18next.js",
         "production": "/dist/umd/react-i18next.min.js"
