@@ -293,6 +293,15 @@
       }
     }
   },
+  "json-logic-js": {
+    "var": "jsonLogic",
+    "versions": {
+      ">= 1.0.0": {
+        "development": "/logic.js",
+        "production": "/logic.js"
+      }
+    }
+  },
   "jszip": {
     "var": "JSZip",
     "versions": {
