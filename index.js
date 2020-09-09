@@ -87,7 +87,12 @@ function main(moduleName, version, options) {
     };
 }
 
+function getAllModules() {
+    return modules;
+}
+
 main.configure = setURL;
 main.unpkg = getURL;
 main.add = add;
+main.getAllModules = getAllModules;
 module.exports = main;
