@@ -382,6 +382,15 @@
       }
     }
   },
+  "react-ace": {
+    "var": "ReactAce",
+    "versions": {
+      ">= 3.0.0": {
+        "development": "/dist/react-ace.js",
+        "production": "/dist/react-ace.min.js"
+      }
+    }
+  },
   "react-bootstrap": {
     "var": "ReactBootstrap",
     "versions": {
