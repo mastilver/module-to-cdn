@@ -18,6 +18,18 @@ test('basic', t => {
     });
 });
 
+test('getAllModules', t => {
+    t.deepEqual(fn.getAllModules(), modules);
+});
+
+test('unpkg', t => {
+    t.is(fn.unpkg({
+        name: 'react',
+        version: '15.0.0',
+        path: '/foo/bar'
+    }), 'https://unpkg.com/react@15.0.0/foo/bar');
+});
+
 test('unknown module', t => {
     t.is(fn('qwerty', '1.0.0'), null);
 });
