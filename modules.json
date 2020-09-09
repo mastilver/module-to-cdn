@@ -116,6 +116,15 @@
       }
     }
   },
+  "@sentry/browser": {
+    "var": "Sentry",
+    "versions": {
+      ">= 4.0.0": {
+        "development": "/build/bundle.js",
+        "production": "/build/bundle.min.js"
+      }
+    }
+  },
   "aframe": {
     "var": "AFRAME",
     "versions": {
@@ -427,6 +436,23 @@
       }
     }
   },
+  "react-popper": {
+    "var": "ReactPopper",
+    "versions": {
+      ">= 0.2.0 < 0.9.0": {
+        "development": "/dist/react-popper.js",
+        "production": "/dist/react-popper.min.js"
+      },
+      ">= 0.10.2 < 1.0.0": {
+        "development": "/dist/umd/react-popper.js",
+        "production": "/dist/umd/react-popper.min.js"
+      },
+      ">= 1.0.0": {
+        "development": "/dist/index.umd.js",
+        "production": "/dist/index.umd.min.js"
+      }
+    }
+  },
   "react-redux": {
     "var": "ReactRedux",
     "versions": {
@@ -439,6 +465,10 @@
   "react-router": {
     "var": "ReactRouter",
     "versions": {
+      ">= 3.0.0 < 4.0.0": {
+        "development": "/umd/ReactRouter.js",
+        "production": "/umd/ReactRouter.min.js"
+      },
       ">= 4.0.0 < 6.0.0": {
         "development": "/umd/react-router.js",
         "production": "/umd/react-router.min.js"
