@@ -103,15 +103,12 @@ async function testNextModule(t, moduleName, env) {
     }
 
     const nextVersion = tags.next;
-    const futureVersion = removePrereleaseItentifiers(nextVersion);
 
-    const cdnConfig = fn(moduleName, futureVersion, {env});
+    const cdnConfig = fn(moduleName, nextVersion, {env});
 
     if (!cdnConfig) {
         return t.pass(`no next support for ${moduleName}`);
     }
-
-    cdnConfig.url = cdnConfig.url.replace(futureVersion, nextVersion);
 
     await testCdnConfig(t, cdnConfig, moduleName, nextVersion);
 }

@@ -413,6 +413,15 @@
       }
     }
   },
+  "react-hook-form": {
+    "var": "ReactHookForm",
+    "versions": {
+      ">= 6.0.0": {
+        "development": "/dist/index.umd.development.js",
+        "production": "/dist/index.umd.production.min.js"
+      }
+    }
+  },
   "react-is": {
     "var": "ReactIs",
     "versions": {
