@@ -347,6 +347,15 @@
       }
     }
   },
+  "platform": {
+    "var": "platform",
+    "versions": {
+      ">= 1.0.0": {
+        "development": "/platform.js",
+        "production": "/platform.js"
+      }
+    }
+  },
   "popper.js": {
     "var": "Popper",
     "versions": {
