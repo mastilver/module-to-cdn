@@ -515,6 +515,15 @@
       }
     }
   },
+  "react-resizable": {
+    "var": "ReactResizable",
+    "versions": {
+      ">= 1.11.0": {
+        "development": "/dist/bundle.js",
+        "production": "/dist/bundle.js"
+      }
+    }
+  },
   "react-router": {
     "var": "ReactRouter",
     "versions": {
