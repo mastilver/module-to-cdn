@@ -9,8 +9,8 @@ cache:
 jobs:
   include:
     # Define the release stage that runs semantic-release
-    if: branch = jmfrancois/chore/fork
     - stage: release
+      if: branch = jmfrancois/chore/fork
       node_js: '12'
       # Advanced: optionally overwrite your default `script` step to skip the tests
       # script: skip
