@@ -226,6 +226,15 @@
       }
     }
   },
+  "classnames": {
+    "var": "classNames",
+    "versions":{
+      ">= 1.2.0": {
+        "development": "/index.js",
+        "production": "/index.js"
+      }
+    }
+  },
   "core-js": {
     "var": "core",
     "versions": {
@@ -418,12 +427,48 @@
       }
     }
   },
+  "react-autowhatever": {
+    "var": "Autowhatever",
+    "versions": {
+      ">= 6.0.0": {
+        "development": "/dist/standalone/autowhatever.js",
+        "production": "/dist/standalone/autowhatever.min.js"
+      }
+    }
+  },
   "react-bootstrap": {
     "var": "ReactBootstrap",
     "versions": {
       ">= 0.20.0": {
         "development": "/dist/react-bootstrap.js",
         "production": "/dist/react-bootstrap.min.js"
+      }
+    }
+  },
+  "react-debounce-input": {
+    "var": "DebounceInput",
+    "versions": {
+      ">= 2.0.0 < 2.2.0": {
+        "development": "/build/react-debounce-input.js",
+        "production": "/build/react-debounce-input.js"
+      },
+      ">= 2.2.0": {
+        "development": "/build/react-debounce-input.js",
+        "production": "/build/react-debounce-input.min.js"
+      }
+    }
+  },
+  "react-css-transition":{
+    "versions": {
+      ">= 0.6.0 < 0.6.3": {
+        "var": "ReactCssTransition",
+        "development": "/dist/react-css-transition.js",
+        "production": "/dist/react-css-transition.min.js"
+      },
+      ">= 0.6.3": {
+        "var": "ReactCSSTransition",
+        "development": "/dist/react-css-transition.js",
+        "production": "/dist/react-css-transition.min.js"
       }
     }
   },
@@ -454,6 +499,19 @@
       ">= 16.0.0": {
         "development": "/umd/react-dom.development.js",
         "production": "/umd/react-dom.production.min.js"
+      }
+    }
+  },
+  "react-draggable": {
+    "var": "ReactDraggable",
+    "versions": {
+      ">= 4.1.0": {
+        "development": "/build/web/react-draggable.min.js",
+        "production": "/build/web/react-draggable.min.js"
+      },
+      ">= 3.0.1 < 4.0.0": {
+        "development": "/dist/react-draggable.js",
+        "production": "/dist/react-draggable.min.js"
       }
     }
   },
@@ -564,6 +622,26 @@
       }
     }
   },
+  "react-virtualized": {
+    "versions": {
+      ">= 5.3.0": {
+        "var": "ReactVirtualized",
+        "development": "/dist/umd/react-virtualized.js",
+        "production": "/dist/umd/react-virtualized.js"
+      },
+      ">= 5.0.0 < 5.3.0": {
+        "var": "ReactVirtualized",
+        "development": "/dist/react-virtualized.js",
+        "production": "/dist/react-virtualized.js"
+      },
+      ">= 1.0.0 < 5.0.0": {
+        "var": "react-virtualized",
+        "development": "/dist/react-virtualized.js",
+        "production": "/dist/react-virtualized.js"
+      }
+    }
+
+  },
   "redux": {
     "var": "Redux",
     "versions": {
@@ -672,6 +750,15 @@
       ">= 1.1.2 < 2.0.0": {
         "development": "/dist/umd/tooltip.js",
         "production": "/dist/umd/tooltip.min.js"
+      }
+    }
+  },
+  "uuid":{
+    "var": "uuid",
+    "versions": {
+      ">= 7.0.0": {
+        "development": "/dist/umd/uuid.min.js",
+        "production": "/dist/umd/uuid.min.js"
       }
     }
   },
