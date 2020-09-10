@@ -10,11 +10,15 @@ jobs:
   include:
     # Define the release stage that runs semantic-release
     - stage: release
-      if: branch = jmfrancois/chore/fork
       node_js: '12'
       # Advanced: optionally overwrite your default `script` step to skip the tests
       # script: skip
       deploy:
+        on:
+          repo: toutpt/module-to-cdn
+          branches:    # ← new!
+            only:      # ← new!
+              - jmfrancois/chore/fork # ← new!
         provider: script
         skip_cleanup: true
         script:
