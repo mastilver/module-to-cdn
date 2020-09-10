@@ -137,7 +137,8 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
                     content.includes(`["${cdnConfig.var}"]=`) ||
                     content.includes(`['${cdnConfig.var}']=`) ||
                     // Immutable 3 is clear, the script is global and just do Immutable =
-                    content.includes(`${cdnConfig.var}=`)
+                    content.includes(`${cdnConfig.var}=`) ||
+                    content.includes(`function${cdnConfig.var}(`)
             );
         }
     }, cdnConfig.url);
@@ -151,11 +152,18 @@ function isValidVarName(name) {
             name = name.split('.').join('_');
         }
 
-        return (
-            !name.includes('}') &&
+        if (name.includes('-')) {
+            name = `"${name}"`;
             // eslint-disable-next-line no-eval
-            eval('(function() { a = {' + name + ':1}; a.' + name + '; var ' + name + '; }); true')
-        );
+            return eval(`(function() { a = {${name}:1}; a[${name}];}); true`);
+        }
+
+        if (name.includes('}')) {
+            return false;
+        }
+
+        // eslint-disable-next-line no-eval
+        return eval(`(function() { a = {${name}:1}; a.${name}; var ${name}; }); true`);
     } catch (error) {
         console.error(error);
         return false;
