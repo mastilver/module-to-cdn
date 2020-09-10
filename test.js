@@ -162,7 +162,3 @@ function isValidVarName(name) {
         return false;
     }
 }
-
-function removePrereleaseItentifiers(version) {
-    return `${semver.major(version)}.${semver.minor(version)}.${semver.patch(version)}`;
-}
