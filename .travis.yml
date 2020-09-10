@@ -6,6 +6,7 @@ cache:
   directories:
     - .test-cache
     - node_modules
+    - ~/.npm
 jobs:
   include:
     # Define the release stage that runs semantic-release
