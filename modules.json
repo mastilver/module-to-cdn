@@ -409,6 +409,23 @@
       }
     }
   },
+  "react-dnd": {
+    "var": "ReactDnD",
+    "versions": {
+      ">= 2.0.0 < 2.1.0": {
+        "development": "/dist/ReactDnD.min.js",
+        "production": "/dist/ReactDnD.min.js"
+      },
+      ">= 2.1.0 < 8.0.0": {
+        "development": "/dist/ReactDnD.js",
+        "production": "/dist/ReactDnD.min.js"
+      },
+      ">= 9.4.0": {
+        "development": "/dist/umd/ReactDnD.js",
+        "production": "/dist/umd/ReactDnD.min.js"
+      }
+    }
+  },
   "react-dom": {
     "var": "ReactDOM",
     "versions": {
