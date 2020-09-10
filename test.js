@@ -1,5 +1,4 @@
 const test = require('ava');
-const semver = require('semver');
 const pathModule = require('path');
 const modules = require('./modules');
 const fn = require('.');
