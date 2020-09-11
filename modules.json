@@ -640,7 +640,15 @@
         "production": "/dist/react-virtualized.js"
       }
     }
-
+  },
+  "recharts": {
+    "versions": {
+      ">= 1.0.0": {
+        "var": "Recharts",
+        "development": "/umd/Recharts.js",
+        "production": "/umd/Recharts.min.js"
+      }
+    }
   },
   "redux": {
     "var": "Redux",
