@@ -752,6 +752,20 @@
       }
     }
   },
+  "timezone-support":{
+    "versions": {
+      ">= 1.0.0 < 2.0.0": {
+        "var": "timezone-support",
+        "development": "/dist/index.umd.js",
+        "production": "/dist/index.umd.js"
+      },
+      ">= 2.0.0": {
+        "var": "timezoneSupport",
+        "development": "/dist/index.umd.js",
+        "production": "/dist/index.umd.js"
+      }
+    }
+  },
   "tooltip.js": {
     "var": "Tooltip",
     "versions": {
