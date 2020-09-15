@@ -622,6 +622,19 @@
       }
     }
   },
+  "react-transition-group": {
+    "var": "ReactTransitionGroup",
+    "versions": {
+      ">= 1.1.1 < 1.2.0": {
+        "development": "/dist/react-transition-group.js",
+        "production": "/dist/react-transition-group.js"
+      },
+      ">= 1.2.0": {
+        "development": "/dist/react-transition-group.js",
+        "production": "/dist/react-transition-group.min.js"
+      }
+    }
+  },
   "react-virtualized": {
     "versions": {
       ">= 5.3.0": {
