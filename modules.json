@@ -748,6 +748,23 @@
       }
     }
   },
+  "simplebar":{
+    "var": "SimpleBar",
+    "versions": {
+      ">= 2.1.0 < 2.6.0": {
+        "development": "/dist/simplebar.js",
+        "production": "/dist/simplebar.js"
+      },
+      ">= 2.6.0 < 3.1.0": {
+        "development": "/dist/simplebar.umd.js",
+        "production": "/dist/simplebar.js"
+      },
+      ">= 3.1.0": {
+        "development": "/dist/simplebar.js",
+        "production": "/dist/simplebar.min.js"
+      }
+    }
+  },
   "styled-components":{
     "var": "styled",
     "versions": {
