@@ -116,6 +116,15 @@
       }
     }
   },
+  "@rooks/use-mutation-observer": {
+    "var": "useMutationObserver",
+    "versions": {
+      ">= 1.1.0": {
+        "development": "/lib/index.js",
+        "production": "/lib/index.min.js"
+      }
+    }
+  },
   "@sentry/browser": {
     "var": "Sentry",
     "versions": {
