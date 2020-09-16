@@ -489,6 +489,23 @@
       }
     }
   },
+  "react-dnd-html5-backend": {
+    "var": "ReactDnDHTML5Backend",
+    "versions": {
+      ">= 1.0.0 < 3.0.0": {
+        "development": "/dist/ReactDnDHTML5Backend.min.js",
+        "production": "/dist/ReactDnDHTML5Backend.min.js"
+      },
+      ">= 3.0.0 < 8.0.0": {
+        "development": "/dist/ReactDnDHTML5Backend.js",
+        "production": "/dist/ReactDnDHTML5Backend.min.js"
+      },
+      ">= 9.4.0": {
+        "development": "/dist/umd/ReactDnDHTML5Backend.js",
+        "production": "/dist/umd/ReactDnDHTML5Backend.min.js"
+      }
+    }
+  },
   "react-dom": {
     "var": "ReactDOM",
     "versions": {
