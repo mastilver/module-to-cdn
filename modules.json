@@ -774,6 +774,15 @@
       }
     }
   },
+  "scroll-smooth": {
+    "var": "scrollSmooth",
+    "versions": {
+      ">= 1.0.0": {
+        "development": "/dist/index.umd.js",
+        "production": "/dist/index.umd.min.js"
+      }
+    }
+  },
   "semantic-ui": {
     "var": null,
     "versions": {
