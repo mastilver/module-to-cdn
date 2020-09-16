@@ -270,6 +270,15 @@
       }
     }
   },
+  "focus-outline-manager": {
+    "var": "FocusOutlineManager",
+    "versions": {
+      ">= 1.0.0": {
+        "development": "/focus-outline-manager.js",
+        "production": "/focus-outline-manager.js"
+      }
+    }
+  },
   "history": {
     "versions": {
       ">= 2.1.1 < 5.0.0": {
