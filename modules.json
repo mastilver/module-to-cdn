@@ -477,5 +477,14 @@
         "production": "https://unpkg.com/history@[version]/umd/history.min.js"
       }
     }
+  },
+  "three": {
+    "var": "THREE",
+    "versions": {
+      ">= 0.100.0": {
+        "development": "https://unpkg.com/three@[version]/build/three.js",
+        "production": "https://unpkg.com/three@[version]/build/three.min.js"
+      }
+    }
   }
 }
