@@ -553,6 +553,10 @@
   "react-hook-form": {
     "var": "ReactHookForm",
     "versions": {
+      ">= 5.0.0 < 6.0.0": {
+        "development": "/dist/react-hook-form.umd.js",
+        "production": "/dist/react-hook-form.umd.js"
+      },
       ">= 6.0.0": {
         "development": "/dist/index.umd.development.js",
         "production": "/dist/index.umd.production.min.js"
