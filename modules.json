@@ -830,6 +830,15 @@
       }
     }
   },
+  "three": {
+    "var": "THREE",
+    "versions": {
+      ">= 0.100.0": {
+        "development": "/build/three.js",
+        "production": "/build/three.min.js"
+      }
+    }
+  },
   "timezone-support":{
     "versions": {
       ">= 1.0.0 < 2.0.0": {
