@@ -35,23 +35,23 @@ if (!fs.existsSync(AXIOS_CACHE_PATH)) {
     fs.mkdirSync(AXIOS_CACHE_PATH);
 }
 
-axiosRetry(axios, {retries: 3});
+axiosRetry(axios, {retries: 3, retryDelay: () => 3000});
 
 function getInfo(url) {
     const info = {};
     const splitted = url.replace('https://unpkg.com/', '').split('/');
-    const [packageAndVersion, inCase, ...path] = splitted;
+    const [packageAndVersion, inCase, ...restPath] = splitted;
 
     if (packageAndVersion.startsWith('@')) {
         const [n, version] = inCase.split('@');
         info.name = `${packageAndVersion}/${n}`;
         info.version = version;
-        info.path = path.join('/');
+        info.path = restPath.join('/');
     } else {
         const [n, version] = packageAndVersion.split('@');
         info.name = n;
         info.version = version;
-        info.path = [inCase].concat(path).join('/');
+        info.path = [inCase].concat(restPath).join('/');
     }
 
     return info;
