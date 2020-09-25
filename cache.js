@@ -7,7 +7,7 @@ const execa = require('execa');
 const semver = require('semver');
 const mkdirp = require('mkdirp');
 
-const CACHE_BASE_PATH = '.test-cache';
+const CACHE_BASE_PATH = `${process.cwd()}/.test-cache`;
 if (!fs.existsSync(CACHE_BASE_PATH)) {
     console.log('Setup cache for testing');
     fs.mkdirSync(CACHE_BASE_PATH);
@@ -19,7 +19,7 @@ const CACHE_NPM = {
 };
 
 if (fs.existsSync(CACHE_NPM_PATH)) {
-    const cache = require(`./${CACHE_NPM_PATH}`);
+    const cache = require(CACHE_NPM_PATH);
     if (Date.now() - cache.__last < 1000 * 60 * 60) {
         console.log('use cache on NPM');
         Object.assign(CACHE_NPM, cache);

@@ -3,6 +3,7 @@
 const semver = require('semver');
 const pathModule = require('path');
 const {getURL, setURL} = require('./url');
+const cache = require('./cache');
 
 const modules = {...require('./modules')};
 
@@ -95,4 +96,5 @@ main.configure = setURL;
 main.unpkg = getURL;
 main.add = add;
 main.getAllModules = getAllModules;
+main.cache = cache;
 module.exports = main;
