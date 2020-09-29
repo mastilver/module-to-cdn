@@ -116,6 +116,15 @@
       }
     }
   },
+  "@popperjs/core": {
+    "var": "Popper",
+    "versions": {
+      ">= 2.0.0": {
+        "development": "/dist/umd/popper.js",
+        "production": "/dist/umd/popper.min.js"
+      }
+    }
+  },
   "@rooks/use-mutation-observer": {
     "var": "useMutationObserver",
     "versions": {
