@@ -144,7 +144,17 @@ LIMIT=";ag-grid;ag-grid-community;ag-grid-enterprise;" ava -v
 
 * hoist-non-react-statics: the umd build contains JS errors (process.env.NODE and require) on every versions.
 
+## Contribute
 
+To add your modules you have to
+
+* checkout this package on github
+* install and run the tests (it will load the cache for the tests)
+* add your module in the module.json file
+* ensure everytime the provided umd path exists and is valid.
+
+Example of not valid umd: https://unpkg.com/browse/react-popper@1.3.7/dist/index.umd.js
+createContext,deepEqual dependencies are always null.
 
 ## License
 
