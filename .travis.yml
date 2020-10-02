@@ -14,9 +14,6 @@ jobs:
       # Advanced: optionally overwrite your default `script` step to skip the tests
       # script: skip
       deploy:
-        provider: script
-        script:
-          - npx semantic-release
+        provider: npm
         on:
-          repo: toutpt/module-to-cdn
-          branch: jmfrancois/chore/fork
+          tags: true
