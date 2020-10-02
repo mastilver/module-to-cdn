@@ -9,7 +9,7 @@
 [npm-url]: https://npmjs.org/package/@talend/module-to-cdn
 [travis-ci-image]: https://travis-ci.org/toutpt/module-to-cdn.svg?branch=jmfrancois/chore/fork
 [travis-ci-url]: https://travis-ci.org/toutpt/module-to-cdn
-[dependencies-image]: https://david-dm.org/toutpt/module-to-cdn/status.svg?path=packages/cmf
+[dependencies-image]: https://david-dm.org/toutpt/module-to-cdn/status.svg
 [dependencies-url]: https://david-dm.org/toutpt/module-to-cdn
 [devdependencies-image]: https://david-dm.org/toutpt/module-to-cdn/dev-status.svg
 [devdependencies-url]: https://david-dm.org/toutpt/module-to-cdn?type=dev
