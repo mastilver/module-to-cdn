@@ -19,4 +19,4 @@ jobs:
           - npx semantic-release
         on:
           repo: toutpt/module-to-cdn
-          branches: jmfrancois/chore/fork
+          branch: jmfrancois/chore/fork
