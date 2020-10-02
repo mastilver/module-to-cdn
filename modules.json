@@ -359,9 +359,13 @@
   "jwt-decode": {
     "var": "jwt_decode",
     "versions": {
-      "*": {
+      ">= 1.0.0 < 3.0.0": {
         "development": "/build/jwt-decode.js",
         "production": "/build/jwt-decode.min.js"
+      },
+      ">= 3.0.0": {
+        "development": "/build/jwt-decode.js",
+        "production": "/build/jwt-decode.js"
       }
     }
   },
@@ -377,9 +381,13 @@
   "mobx": {
     "var": "mobx",
     "versions": {
-      ">= 2.1.3": {
+      ">= 2.1.3 < 6.0.0": {
         "development": "/lib/mobx.umd.js",
         "production": "/lib/mobx.umd.min.js"
+      },
+      ">= 6.0.0": {
+        "development": "/dist/mobx.umd.development.js",
+        "production": "/dist/mobx.umd.production.min.js"
       }
     }
   },
