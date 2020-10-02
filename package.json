@@ -54,5 +54,8 @@
       "node/no-unsupported-features/es-syntax": "off",
       "unicorn/no-reduce": "off"
     }
+  },
+  "release": {
+    "branches": ["jmfrancois/chore/fork"]
   }
 }
