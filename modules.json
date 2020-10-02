@@ -116,6 +116,14 @@
       }
     }
   },
+  "@babel/polyfill": {
+    "versions": {
+      ">= 7.0.0": {
+        "development": "/dist/polyfill.js",
+        "production": "/dist/polyfill.min.js"
+      }
+    }
+  },
   "@popperjs/core": {
     "var": "Popper",
     "versions": {
