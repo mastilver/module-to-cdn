@@ -79,6 +79,7 @@ async function cachedGet(url) {
         return response;
     } catch (error) {
         console.error('DownloadError', url, error.message);
+        return Promise.reject(error);
     }
 }
 
