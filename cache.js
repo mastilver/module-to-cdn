@@ -59,7 +59,7 @@ function getInfo(url) {
 
 function getPathFromURL(url) {
     const info = getInfo(url);
-    return `./${AXIOS_CACHE_PATH}/${info.name}/${info.version}/${info.path}`;
+    return `${AXIOS_CACHE_PATH}/${info.name}/${info.version}/${info.path}`;
 }
 
 async function cachedGet(url) {
