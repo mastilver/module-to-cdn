@@ -13,7 +13,9 @@ test('basic', t => {
         url: 'https://unpkg.com/react@15.0.0/dist/react.js',
         version: '15.0.0',
         path: '/dist/react.js',
-        local: pathModule.join(__dirname, 'node_modules', 'react', '/dist/react.js')
+        local: pathModule.join(__dirname, 'node_modules', 'react', '/dist/react.js'),
+        stylePath: undefined,
+        styleUrl: undefined
     });
 });
 
@@ -22,11 +24,14 @@ test('getAllModules', t => {
 });
 
 test('unpkg', t => {
-    t.is(fn.unpkg({
-        name: 'react',
-        version: '15.0.0',
-        path: '/foo/bar'
-    }), 'https://unpkg.com/react@15.0.0/foo/bar');
+    t.is(
+        fn.unpkg({
+            name: 'react',
+            version: '15.0.0',
+            path: '/foo/bar'
+        }),
+        'https://unpkg.com/react@15.0.0/foo/bar'
+    );
 });
 
 test('unknown module', t => {
@@ -49,7 +54,9 @@ test('module not installed', t => {
         url: 'https://unpkg.com/react-dom@15.0.0/dist/react-dom.js',
         version: '15.0.0',
         path: '/dist/react-dom.js',
-        local: undefined
+        local: undefined,
+        stylePath: undefined,
+        styleUrl: undefined
     });
 });
 

@@ -50,16 +50,23 @@ function main(moduleName, version, options) {
         return null;
     }
 
-    const range = Object.keys(modules[moduleName].versions)
-        .find(range => semver.satisfies(version, range));
-    const config = modules[moduleName].versions[range];
+    const moduleConf = modules[moduleName];
+    const range = Object.keys(moduleConf.versions).find(range => semver.satisfies(version, range));
+    const config = moduleConf.versions[range];
+    const styleConfig = moduleConf['style-versions'] && moduleConf['style-versions'][range];
 
     if (config == null) {
         return null;
     }
 
     let path = env === 'development' ? config.development : config.production;
+    let stylePath;
+    if (styleConfig) {
+        stylePath = env === 'development' ? styleConfig.development : styleConfig.production;
+    }
+
     let url;
+    let styleUrl;
     let root;
     if (path.startsWith('/')) {
         url = getURL({
@@ -67,6 +74,13 @@ function main(moduleName, version, options) {
             version,
             path
         });
+        styleUrl =
+            stylePath &&
+            getURL({
+                name: moduleName,
+                version,
+                path: stylePath
+            });
         try {
             const mainPath = require.resolve(moduleName);
             const splited = mainPath.split('node_modules');
@@ -75,6 +89,7 @@ function main(moduleName, version, options) {
         } catch {}
     } else {
         url = path.replace('[version]', version);
+        styleUrl = stylePath && stylePath.replace('[version]', version);
         path = undefined;
     }
 
@@ -84,7 +99,9 @@ function main(moduleName, version, options) {
         url,
         version,
         path,
-        local: root
+        local: root,
+        styleUrl,
+        stylePath
     };
 }
 
