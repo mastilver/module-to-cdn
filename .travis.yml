@@ -8,12 +8,12 @@ cache:
     - ~/.npm
 jobs:
   include:
-    # Define the release stage that runs semantic-release
     - stage: release
       node_js: '12'
-      # Advanced: optionally overwrite your default `script` step to skip the tests
-      # script: skip
       deploy:
         provider: npm
+        email: frontend@talend.com
+        api_key:
+          secure: GU+KglS/Egu5cq+mdeJFGB4RdFpqk3wbQED0mInpq6r5UYKNgm9sRYkIyJcMzc5CQhXhg7PvTL8xA6pc02qnkulCkNjaBXI1VzW58UdSV3hZIgXc+nWPd92YuX8Cs+FVoa5ZPtRcFKbp/2SmAhdhHtUDXfLTnG4aHimj1TCyPHAwQLu5Kvlqdcllyq17keta/EcWeLXVAXQ39mDh56UdQD9fhbvP7uac5sxqQxiI2/yfDoyr9p4kHyNTBqi66vYHCcxbt4d6QR88//nXTwuGicOd+CkCPA6db81q1h4D6bknzYvrV5zWLsAb+GvYWDY80Pl++lJ8CjtE+4j/aSGWx5PnSj+Ps3tYybX8Fc8T+TBgFStkG/Kb6RkzWT5tZmSu2pa5xPfX7/5RvCiJiNc+Q8TuSLd9pwRqiXky8GekE3FcylO1SugH+0dvvbDi5dwD4QFSuw5hSFN90jp7fbMbI9OwfF1GsMZsJmbmC6qpyLtzMyB3iKqFFEU0LG0IJgPq18/SuFiJynSIidxf08guPWMXFb7EB26gABO+2dMaPstedD74Athsz9nqFuLJ3LqF8OgeaQH3gG58MEfk6lRx7w1IaBkJakb8kONjf+ztA8SXJq0aKIYxTaNrfRBP6ebe4YFc2fcmyP7ctpixbkS0YmlvrJ+RrEeuTKMWbhe0PBo=
         on:
           tags: true
