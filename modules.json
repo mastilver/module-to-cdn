@@ -163,7 +163,7 @@
   "ag-grid": {
     "var": "agGrid",
     "versions": {
-      ">= 4.0.0 <= 4.2.2 || > 4.2.4 <= 18.1.2": {
+      ">= 4.0.0 < 4.2.2 || > 4.2.4 <= 18.1.2": {
         "development": "/dist/ag-grid.js",
         "production": "/dist/ag-grid.min.js"
       }
@@ -380,7 +380,7 @@
   "lodash": {
     "var": "_",
     "versions": {
-      ">= 4.5.1 < 4.17.16 || > 4.14.17": {
+      ">= 4.5.1 < 4.17.16 || > 4.14.17 < 4.17.16 || > 4.17.17": {
         "development": "/lodash.js",
         "production": "/lodash.min.js"
       }
@@ -662,7 +662,7 @@
   "react-router": {
     "var": "ReactRouter",
     "versions": {
-      ">= 3.0.0 < 4.0.0": {
+      ">= 3.0.0 < 3.2.2 || > 3.2.2 < 4.0.0": {
         "development": "/umd/ReactRouter.js",
         "production": "/umd/ReactRouter.min.js"
       },
