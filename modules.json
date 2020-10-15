@@ -163,7 +163,7 @@
   "ag-grid": {
     "var": "agGrid",
     "versions": {
-      ">= 4.0.0 <= 18.1.2": {
+      ">= 4.0.0 <= 4.2.2 || > 4.2.4 <= 18.1.2": {
         "development": "/dist/ag-grid.js",
         "production": "/dist/ag-grid.min.js"
       }
@@ -185,7 +185,7 @@
   "ag-grid-enterprise": {
     "var": "agGrid",
     "versions": {
-      ">= 17.1.1": {
+      ">= 17.1.1 < 23.0.0 || > 23.0.0": {
         "development": "/dist/ag-grid-enterprise.js",
         "production": "/dist/ag-grid-enterprise.min.js"
       }
@@ -254,7 +254,7 @@
   },
   "classnames": {
     "var": "classNames",
-    "versions":{
+    "versions": {
       ">= 1.2.0": {
         "development": "/index.js",
         "production": "/index.js"
@@ -380,7 +380,7 @@
   "lodash": {
     "var": "_",
     "versions": {
-      ">= 4.5.1": {
+      ">= 4.5.1 < 4.17.16 || > 4.14.17": {
         "development": "/lodash.js",
         "production": "/lodash.min.js"
       }
@@ -501,7 +501,7 @@
       }
     }
   },
-  "react-css-transition":{
+  "react-css-transition": {
     "versions": {
       ">= 0.6.0 < 0.6.3": {
         "var": "ReactCssTransition",
@@ -522,7 +522,7 @@
         "development": "/dist/ReactDnD.min.js",
         "production": "/dist/ReactDnD.min.js"
       },
-      ">= 2.1.0 < 8.0.0": {
+      ">= 2.1.0 < 4.0.2 || > 4.0.2 < 8.0.0": {
         "development": "/dist/ReactDnD.js",
         "production": "/dist/ReactDnD.min.js"
       },
@@ -539,7 +539,7 @@
         "development": "/dist/ReactDnDHTML5Backend.min.js",
         "production": "/dist/ReactDnDHTML5Backend.min.js"
       },
-      ">= 3.0.0 < 8.0.0": {
+      ">= 3.0.0 < 4.0.2 || > 4.0.2 < 8.0.0": {
         "development": "/dist/ReactDnDHTML5Backend.js",
         "production": "/dist/ReactDnDHTML5Backend.min.js"
       },
@@ -591,7 +591,7 @@
   "react-is": {
     "var": "ReactIs",
     "versions": {
-      ">= 16.0.0": {
+      ">= 16.0.0 < 16.6.2 || > 16.6.2": {
         "development": "/umd/react-is.development.js",
         "production": "/umd/react-is.production.min.js"
       }
@@ -697,7 +697,7 @@
         "development": "/dist/react-transition-group.js",
         "production": "/dist/react-transition-group.js"
       },
-      ">= 1.2.0": {
+      ">= 1.2.0 < 2.5.0 || > 2.5.3": {
         "development": "/dist/react-transition-group.js",
         "production": "/dist/react-transition-group.min.js"
       }
@@ -825,7 +825,7 @@
       }
     }
   },
-  "simplebar":{
+  "simplebar": {
     "var": "SimpleBar",
     "versions": {
       ">= 2.1.0 < 2.6.0": {
@@ -842,7 +842,7 @@
       }
     }
   },
-  "styled-components":{
+  "styled-components": {
     "var": "styled",
     "versions": {
       ">= 2.0.0": {
@@ -868,7 +868,7 @@
       }
     }
   },
-  "timezone-support":{
+  "timezone-support": {
     "versions": {
       ">= 1.0.0 < 2.0.0": {
         "var": "timezone-support",
@@ -891,7 +891,7 @@
       }
     }
   },
-  "uuid":{
+  "uuid": {
     "var": "uuid",
     "versions": {
       ">= 7.0.0": {
