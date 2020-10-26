@@ -4,6 +4,10 @@
   "description": "Get cdn config from npm module name",
   "license": "MIT",
   "repository": "toutpt/module-to-cdn",
+  "bin": {
+    "name": "moduleToCdn",
+    "main": "./cli.js"
+  },
   "author": {
     "name": "Thomas Sileghem",
     "email": "th.sileghem@gmail.com",
@@ -20,6 +24,8 @@
     "index.js",
     "cache.js",
     "url.js",
+    "cli.js",
+    "meta/*",
     "modules.json"
   ],
   "keywords": [
@@ -28,8 +34,10 @@
   "dependencies": {
     "axios": "^0.20.0",
     "axios-retry": "^3.1.9",
+    "commander": "^6.1.0",
     "execa": "^4.0.0",
     "mkdirp": "^1.0.4",
+    "queue": "^6.0.1",
     "semver": "^7.3.2"
   },
   "devDependencies": {
@@ -49,6 +57,7 @@
     ],
     "rules": {
       "ava/no-ignored-test-files": "off",
+      "quotes": "off",
       "eqeqeq": "off",
       "no-eq-null": "off",
       "node/no-unsupported-features/es-syntax": "off",

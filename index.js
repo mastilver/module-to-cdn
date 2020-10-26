@@ -4,6 +4,7 @@ const semver = require('semver');
 const pathModule = require('path');
 const {getURL, setURL} = require('./url');
 const cache = require('./cache');
+const fs = require('fs');
 
 const modules = {...require('./modules')};
 
@@ -37,11 +38,11 @@ function main(moduleName, version, options) {
     const env = options.env || 'development';
 
     if (typeof moduleName !== 'string') {
-        throw new TypeError('Expected \'moduleName\' to be a string');
+        throw new TypeError("Expected 'moduleName' to be a string");
     }
 
     if (typeof version !== 'string') {
-        throw new TypeError('Expected \'version\' to be a string');
+        throw new TypeError("Expected 'version' to be a string");
     }
 
     const isModuleAvailable = moduleName in modules;
@@ -93,9 +94,23 @@ function main(moduleName, version, options) {
         path = undefined;
     }
 
+    let meta = {};
+    const metaPath = `./meta/${moduleName}/meta.json`;
+
+    if (fs.existsSync(`./meta/${moduleName}/meta.json`)) {
+        meta = require(metaPath)[url] || {};
+    } else {
+        console.warn(
+            `no meta found for ${moduleName}. You can update using moduleToCdn update CLI`
+        );
+    }
+
     return {
         name: moduleName,
         var: modules[moduleName].var || modules[moduleName].versions[range].var,
+        integrity: meta.integrity,
+        size: meta.size,
+        lastModified: meta.lastModified,
         url,
         version,
         path,
