@@ -597,6 +597,15 @@
       }
     }
   },
+  "react-jsonschema-form": {
+    "var": "JSONSchemaForm",
+    "versions": {
+      ">= 0.50.0": {
+        "development": "/dist/react-jsonschema-form.js",
+        "production": "/dist/react-jsonschema-form.js"
+      }
+    }
+  },
   "react-i18next": {
     "versions": {
       ">= 2.0.0 < 8.0.0": {
