@@ -32,25 +32,38 @@ function add(config) {
     });
 }
 
-function main(moduleName, version, options) {
+function getModuleName(importPath) {
+    const isScoped = importPath.startsWith('@');
+    const splitted = importPath.split('/');
+    if ((isScoped && splitted.length < 3) || (!isScoped && splitted.length < 2)) {
+        return importPath;
+    }
+    if (isScoped) {
+        return `${splitted[0]}/${splitted[1]}`;
+    }
+    return splitted[0];
+}
+
+function main(importPath, version, options) {
     options = options || {};
     const env = options.env || 'development';
 
-    if (typeof moduleName !== 'string') {
-        throw new TypeError('Expected \'moduleName\' to be a string');
+    if (typeof importPath !== 'string') {
+        throw new TypeError("Expected 'importPath' to be a string");
     }
 
     if (typeof version !== 'string') {
-        throw new TypeError('Expected \'version\' to be a string');
+        throw new TypeError("Expected 'version' to be a string");
     }
 
-    const isModuleAvailable = moduleName in modules;
+    const isModuleAvailable = importPath in modules;
 
     if (!isModuleAvailable) {
         return null;
     }
 
-    const moduleConf = modules[moduleName];
+    const moduleName = getModuleName(importPath);
+    const moduleConf = modules[importPath];
     const range = Object.keys(moduleConf.versions).find(range => semver.satisfies(version, range));
     const config = moduleConf.versions[range];
     const styleConfig = moduleConf['style-versions'] && moduleConf['style-versions'][range];
@@ -95,7 +108,7 @@ function main(moduleName, version, options) {
 
     return {
         name: moduleName,
-        var: modules[moduleName].var || modules[moduleName].versions[range].var,
+        var: modules[importPath].var || modules[importPath].versions[range].var,
         url,
         version,
         path,
@@ -114,4 +127,5 @@ main.unpkg = getURL;
 main.add = add;
 main.getAllModules = getAllModules;
 main.cache = cache;
+main.getModuleName = getModuleName;
 module.exports = main;

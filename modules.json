@@ -29,7 +29,7 @@
   "@angular/common/http": {
     "var": "ng.common.http",
     "versions": {
-      ">=2.1.0 < 3.0.0 || >= 4.0.0": {
+      "> 4.3.6": {
         "development": "/bundles/common-http.umd.js",
         "production": "/bundles/common-http.umd.min.js"
       }
@@ -763,6 +763,15 @@
       ">= 1.0.0": {
         "development": "/dist/redux-saga.umd.js",
         "production": "/dist/redux-saga.umd.min.js"
+      }
+    }
+  },
+  "redux-saga/effects": {
+    "var": "ReduxSagaEffects",
+    "versions": {
+      ">= 1.0.5": {
+        "development": "/dist/redux-saga-effects.umd.js",
+        "production": "/dist/redux-saga-effects.umd.min.js"
       }
     }
   },

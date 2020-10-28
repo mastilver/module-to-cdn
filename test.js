@@ -68,27 +68,28 @@ function limit(m) {
     return true;
 }
 
-for (const moduleName of moduleNames.filter(m => limit(m))) {
-    const versionRanges = Object.keys(modules[moduleName].versions);
+for (const importPath of moduleNames.filter(m => limit(m))) {
+    const moduleName = fn.getModuleName(importPath);
+    const versionRanges = Object.keys(modules[importPath].versions);
 
-    test.serial(`prod: ${moduleName}@next`, testNextModule, moduleName, 'production');
-    test.serial(`dev: ${moduleName}@next`, testNextModule, moduleName, 'development');
+    test.serial(`prod: ${importPath}@next`, testNextModule, importPath, 'production');
+    test.serial(`dev: ${importPath}@next`, testNextModule, importPath, 'development');
 
     const allVersions = getAllVersions(moduleName);
     const testVersions = [].concat(...versionRanges.map(getRangeEdgeVersions(allVersions)));
     console.log(moduleName, testVersions);
     testVersions.forEach(version => {
         test.serial(
-            `prod: ${moduleName}@${version}`,
+            `prod: ${importPath}@${version}`,
             testModule,
-            moduleName,
+            importPath,
             version,
             'production'
         );
         test.serial(
-            `dev: ${moduleName}@${version}`,
+            `dev: ${importPath}@${version}`,
             testModule,
-            moduleName,
+            importPath,
             version,
             'development'
         );
@@ -122,7 +123,7 @@ async function testNextModule(t, moduleName, env) {
 async function testCdnConfig(t, cdnConfig, moduleName, version) {
     t.notDeepEqual(cdnConfig, null);
 
-    t.is(cdnConfig.name, moduleName);
+    t.is(cdnConfig.name, fn.getModuleName(moduleName));
     t.truthy(cdnConfig.url);
     t.true(cdnConfig.url.includes(version));
 
@@ -145,7 +146,8 @@ async function testCdnConfig(t, cdnConfig, moduleName, version) {
                     content.includes(`['${cdnConfig.var}']=`) ||
                     // Immutable 3 is clear, the script is global and just do Immutable =
                     content.includes(`${cdnConfig.var}=`) ||
-                    content.includes(`function${cdnConfig.var}(`)
+                    content.includes(`function${cdnConfig.var}(`),
+                `${cdnConfig.var} not found in the content`
             );
         }
     }, cdnConfig.url);
