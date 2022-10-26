@@ -80,18 +80,34 @@
   "react-router": {
     "var": "ReactRouter",
     "versions": {
-      ">= 4.0.0": {
+      ">= 4.0.0 < 6.0.0": {
         "development": "https://unpkg.com/react-router@[version]/umd/react-router.js",
         "production": "https://unpkg.com/react-router@[version]/umd/react-router.min.js"
+      },
+      ">= 6.0.0 <= 6.4.0-pre.2": {
+        "development": "https://unpkg.com/react-router@[version]/umd/react-router.development.js",
+        "production": "https://unpkg.com/react-router@[version]/umd/react-router.production.min.js"
+      },
+      ">= 6.4.0-pre.4": {
+        "development": "https://unpkg.com/react-router@[version]/dist/umd/react-router.development.js",
+        "production": "https://unpkg.com/react-router@[version]/dist/umd/react-router.production.min.js"
       }
     }
   },
   "react-router-dom": {
     "var": "ReactRouterDOM",
     "versions": {
-      ">= 4.0.0": {
+      ">= 4.0.0 < 6.0.0": {
         "development": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.js",
         "production": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.min.js"
+      },
+      ">= 6.0.0 <= 6.4.0-pre.3": {
+        "development": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.development.js",
+        "production": "https://unpkg.com/react-router-dom@[version]/umd/react-router-dom.production.min.js"
+      },
+      ">= 6.4.0-pre.4": {
+        "development": "https://unpkg.com/react-router-dom@[version]/dist/umd/react-router-dom.development.js",
+        "production": "https://unpkg.com/react-router-dom@[version]/dist/umd/react-router-dom.production.min.js"
       }
     }
   },
